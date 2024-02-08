@@ -1,4 +1,4 @@
-package ama.ripe.block1
+package ama.test.block1
 
 import org.junit.Test
 
