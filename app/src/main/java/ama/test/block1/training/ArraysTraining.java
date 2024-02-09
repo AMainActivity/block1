@@ -18,7 +18,6 @@ public class ArraysTraining {
         reverse(new int[]{1, -5, 22, 4, 8, 5, -15, 40, 500, 846, 54, 687, 8, 548, 7, 6});
         fibonacciNumbers(40);
         maxCountSymbol(new int[]{1, -5, 1, 1, 7, 8, 548, 7, 6});
-        ;
     }
 
     /**
@@ -128,22 +127,23 @@ public class ArraysTraining {
      * элементов
      */
     public static int maxCountSymbol(int[] array) {
-        System.out.println("maxCountSymbol");
-        System.out.println("исходный: " + Arrays.toString(array));
         //TODO: implement it
-        int[] ar = new int[array.length];
-        int count = 0;
+        System.out.println("maxCountSymbol");
+        System.out.println(Arrays.toString(array));
+        int coun = 1;
+        int maxCount = 0;
         for (int i = 0; i < array.length; i++) {
-            count = 0;
-            for (int j = 0; j < array.length; j++) {
+            for (int j = i + 1; j < array.length; j++) {
                 if (array[i] == array[j]) {
-                    count ++;
-                    if (j== array.length - 1)
-                        ar[i] = count;
+                    coun++;
                 }
             }
+            if (coun > maxCount) {
+                maxCount = coun;
+            }
+            coun = 1;
         }
-        System.out.println(Arrays.toString(ar));
-        return count;
+        System.out.println(maxCount);
+        return maxCount;
     }
 }
