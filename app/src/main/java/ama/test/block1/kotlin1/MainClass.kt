@@ -26,6 +26,10 @@ class MainClass {
         val bookWithNull2: Book? = Book(price = 5.5, wordCount = 9999)
         bookWithNull1.let { buy(bookWithNull1 as Publication) }
         bookWithNull2.let { buy(bookWithNull2 as Publication) }
+
+        sum(10.3, 10.2)
+        sum(-1.1, 1.0)
+        sum(0.111, 1.01)
     }
 
     private fun printFormatted(classname: String, wordCount: Int, price: Double) {
@@ -42,4 +46,11 @@ class MainClass {
         println("The purchase is complete. The purchase amount was ${publication.price}")
 
     }
+
+    /*
+    * 5. Создать переменную sum и присвоить ей лямбда-выражение, которое будет складывать
+    *  два переданных ей числа и выводить результат в лог. Вызвать данное лямбда-выражение
+    *  с произвольными параметрами.
+    */
+    val sum = { a: Double, b: Double -> println(a + b) }
 }
