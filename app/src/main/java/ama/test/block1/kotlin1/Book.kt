@@ -6,4 +6,11 @@ class Book(override var price: Double, override var wordCount: Int) : Publicatio
         in 1000..7500 -> "Short Story"
         else -> "Novel"
     }
+
+    override fun equals(other: Any?): Boolean {
+        if (other is Book) return this.getType() == other.getType()
+                && this.price == other.price
+                && this.wordCount == other.wordCount
+        return false
+    }
 }
