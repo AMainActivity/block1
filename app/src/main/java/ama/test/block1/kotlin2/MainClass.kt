@@ -7,6 +7,7 @@ class MainClass {
         val listUser = createListOfUsers(user)
         filterUser(listUser)
         mapOfUser(listUser)
+        user.checkAge()
     }
 
     //4. Создать объект класса User, вывести в лог startTime данного юзера, после вызвать
@@ -59,5 +60,14 @@ class MainClass {
         val listName = listUser.map { user -> user.name }
         println(listName.first())
         println(listName.last())
+    }
+
+    //8. Создать функцию-расширение класса User, которая проверяет, что юзер старше 18 лет,
+    // и в случае успеха выводит в лог, а в случае неуспеха возвращает ошибку.
+    private fun User.checkAge() {
+        when (this.age) {
+            in 18..100 -> println(this.age)
+            else -> throw IllegalStateException("Возраст меньше 18: ${this.age}")
+        }
     }
 }
