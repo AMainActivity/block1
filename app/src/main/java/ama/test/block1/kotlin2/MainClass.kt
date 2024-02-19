@@ -18,6 +18,7 @@ class MainClass {
             }
 
         }
+        auth(::updateCache)
     }
 
     //4. Создать объект класса User, вывести в лог startTime данного юзера, после вызвать
@@ -79,5 +80,15 @@ class MainClass {
             in 18..100 -> println(this.age)
             else -> throw IllegalStateException("Возраст меньше 18: ${this.age}")
         }
+    }
+
+    //10. Реализовать inline функцию auth, принимающую в качестве параметра функцию updateCache.
+    // Функция updateCache должна выводить в лог информацию об обновлении кэша.
+    private inline fun auth(upd: () -> Unit) {
+
+    }
+
+    private fun updateCache() {
+        println("кэш обновлён")
     }
 }
