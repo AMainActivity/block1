@@ -8,6 +8,16 @@ class MainClass {
         filterUser(listUser)
         mapOfUser(listUser)
         user.checkAge()
+        val authCallBack = object : AuthCallBack {
+            override fun authSuccess() {
+                println("authSuccess")
+            }
+
+            override fun authFailed() {
+                println("authFailed")
+            }
+
+        }
     }
 
     //4. Создать объект класса User, вывести в лог startTime данного юзера, после вызвать
