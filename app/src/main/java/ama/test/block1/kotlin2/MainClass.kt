@@ -18,7 +18,7 @@ class MainClass {
             }
 
         }
-        auth(::updateCache)
+        auth(user, authCallBack, ::updateCache)
     }
 
     //4. Создать объект класса User, вывести в лог startTime данного юзера, после вызвать
@@ -84,8 +84,17 @@ class MainClass {
 
     //10. Реализовать inline функцию auth, принимающую в качестве параметра функцию updateCache.
     // Функция updateCache должна выводить в лог информацию об обновлении кэша.
-    private inline fun auth(upd: () -> Unit) {
 
+    //11. Внутри функции auth вызвать метод коллбека authSuccess и переданный updateCache,
+    // если проверка возраста пользователя произошла без ошибки. В случае получения ошибки
+    // вызвать authFailed.
+    private inline fun auth(user: User, authCallBack: AuthCallBack, noinline upd: () -> Unit) {
+        try {
+            authCallBack.authSuccess()
+            upd
+        } catch (e: Exception) {
+            authCallBack.authFailed()
+        }
     }
 
     private fun updateCache() {
