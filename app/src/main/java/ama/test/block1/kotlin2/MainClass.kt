@@ -19,6 +19,9 @@ class MainClass {
 
         }
         auth(user, authCallBack, ::updateCache)
+        doAction(Action.Logout(), user, authCallBack, ::updateCache)
+        doAction(Action.Registration(), user, authCallBack, ::updateCache)
+        doAction(Action.Login(user), user, authCallBack, ::updateCache)
     }
 
     //4. Создать объект класса User, вывести в лог startTime данного юзера, после вызвать
@@ -99,5 +102,20 @@ class MainClass {
 
     private fun updateCache() {
         println("кэш обновлён")
+    }
+
+    //13. Реализовать метод doAction, принимающий экземпляр класса Action. В зависимости от
+    // переданного действия выводить в лог текст, к примеру “Auth started”. Для действия Login
+    // вызывать метод auth.
+    private fun doAction(action: Action, user: User, authCallBack: AuthCallBack, upd: () -> Unit) {
+        when (action) {
+            is Action.Login -> {
+                println("login")
+                auth(user, authCallBack, upd)
+            }
+
+            is Action.Logout -> println("logout")
+            is Action.Registration -> println("Auth started")
+        }
     }
 }
