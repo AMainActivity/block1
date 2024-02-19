@@ -6,10 +6,11 @@ class MainClass {
         val user = createUser()
         val listUser = createListOfUsers(user)
         filterUser(listUser)
+        mapOfUser(listUser)
     }
 
-    //4. Создать объект класса User, вывести в лог startTime данного юзера, после вызвать Thread.sleep(1000) и повторно вывести в
-    //лог startTime.
+    //4. Создать объект класса User, вывести в лог startTime данного юзера, после вызвать
+    // Thread.sleep(1000) и повторно вывести в лог startTime.
     private fun createUser(): User {
 
         val user = User(
@@ -24,8 +25,8 @@ class MainClass {
         return user
     }
 
-    //5. Создать список пользователей, содержащий в себе один объект класса User. Используя функцию apply, добавить ещё
-    //несколько объектов класса User в список пользователей.
+    //5. Создать список пользователей, содержащий в себе один объект класса User.
+    // Используя функцию apply, добавить ещё несколько объектов класса User в список пользователей.
     private fun createListOfUsers(user: User): List<User> {
         val listUser = mutableListOf(user)
         val user2 = User(
@@ -47,8 +48,16 @@ class MainClass {
         return listUser
     }
 
-    //6. Получить список пользователей, у которых имеется полный доступ (поле type имеет значение FULL).
+    //6. Получить список пользователей, у которых имеется полный доступ
+    // (поле type имеет значение FULL).
     private fun filterUser(listUser: List<User>) =
         listUser.filter { it.type == Type.FULL }
 
+    //7. Преобразовать список User в список имен пользователей. Получить первый и
+    // последний элементы списка и вывести их в лог.
+    private fun mapOfUser(listUser: List<User>) {
+        val listName = listUser.map { user -> user.name }
+        println(listName.first())
+        println(listName.last())
+    }
 }
