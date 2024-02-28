@@ -1,0 +1,20 @@
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="splash_animation_duration">3000</dimen>
+    <dimen name="margin_start_1">1dp</dimen>
+    <dimen name="margin_top_17">17dp</dimen>
+    <dimen name="heigt_width_38">38dp</dimen>
+    <dimen name="heigt_width_110">110dp</dimen>
+    <dimen name="margin_bottom_56">56dp</dimen>
+    <dimen name="margin_bottom_16">16dp</dimen>
+    <dimen name="margin_bottom_31">31dp</dimen>
+    <dimen name="margin_bottom_32">32dp</dimen>
+    <dimen name="margin_start_130">130dp</dimen>
+    <dimen name="margin_start_41">41dp</dimen>
+    <dimen name="margin_top_96">96dp</dimen>
+    <dimen name="margin_top_89">89dp</dimen>
+    <dimen name="name_text_size_24">24sp</dimen>
+    <dimen name="name_text_size_22">22sp</dimen>
+    <dimen name="name_text_size_20">20sp</dimen>
+</resources>
