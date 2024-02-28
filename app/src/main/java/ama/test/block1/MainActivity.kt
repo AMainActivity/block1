@@ -9,7 +9,6 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.get
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,8 +20,6 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         setBottomNavigation()
         supportActionBar?.title = null
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -31,10 +28,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
         return when (item.itemId) {
-           android.R.id.home -> {
-               finish()
+            android.R.id.home -> {
+                finish()
                 true
             }
 

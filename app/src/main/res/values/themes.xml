@@ -6,6 +6,7 @@
         <item name="colorOnPrimary">@color/white</item>
         <item name="windowActionBar">false</item>
         <item name="windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@mipmap/background</item>
         <item name="android:windowActionBarOverlay">true</item>
     </style>
 

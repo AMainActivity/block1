@@ -6,7 +6,7 @@
         android:id="@+id/action_edit"
         android:icon="@drawable/menu_edit_24"
         android:title="@string/menu_edit"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_busket"
         android:icon="@drawable/menu_basket_24"
