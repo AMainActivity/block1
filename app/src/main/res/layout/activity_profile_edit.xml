@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".ProfileInfoActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:fitsSystemWindows="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/profile_edit_ab_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_20" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@drawable/menu_left_24">
+
+            </com.google.android.material.appbar.MaterialToolbar>
+        </FrameLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_view_edit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height_0"
+        android:layout_weight="@dimen/weight_1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_25"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_29"
+                android:textColorHint="@drawable/edit_color_selector"
+                app:boxStrokeColor="@color/orange"
+                app:hintTextColor="@drawable/edit_color_selector">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/margin_5"
+                    android:backgroundTint="@color/black"
+                    android:hint="@string/activity_edit_text_hint_name"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/activity_edit_text_value_name"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@color/orange" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_25"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_29"
+                android:textColorHint="@drawable/edit_color_selector"
+                app:boxStrokeColor="@color/orange"
+                app:hintTextColor="@drawable/edit_color_selector">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/margin_5"
+                    android:backgroundTint="@color/black"
+                    android:hint="@string/activity_edit_hint_sirname"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/activity_edit_value_sirname"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@color/orange" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_25"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_29"
+                android:textColorHint="@drawable/edit_color_selector"
+                app:boxStrokeColor="@color/orange"
+                app:hintTextColor="@drawable/edit_color_selector">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/margin_5"
+                    android:backgroundTint="@color/black"
+                    android:hint="@string/profile_birthday_hint_text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/activity_edit_value_birthday"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@color/orange" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_25"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_29"
+                android:textColorHint="@drawable/edit_color_selector"
+                app:boxStrokeColor="@color/orange"
+                app:hintTextColor="@drawable/edit_color_selector">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/margin_5"
+                    android:backgroundTint="@color/black"
+                    android:hint="@string/profile_phone_number_hint_text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/profile_phone_number_value_text"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@color/orange" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_25"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_29"
+                android:textColorHint="@drawable/edit_color_selector"
+                app:boxStrokeColor="@color/orange"
+                app:hintTextColor="@drawable/edit_color_selector">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/margin_5"
+                    android:backgroundTint="@color/black"
+                    android:hint="@string/profile_email_hint_text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@string/profile_email_value_text"
+                    android:textColor="@color/white"
+                    android:textCursorDrawable="@color/orange" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:id="@+id/profile_edit_change_pass"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_56"
+                android:layout_marginStart="@dimen/margin_25"
+                android:layout_marginTop="@dimen/margin_23"
+                android:layout_marginEnd="@dimen/margin_29"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/heigt_width_24"
+                    android:layout_height="@dimen/heigt_width_24"
+                    android:layout_marginStart="@dimen/margin_16"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile_edit_pass_24"
+                    android:tint="@color/orange" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_11"
+                    android:text="@string/activity_edit_button_change_pass"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/text_size_18" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_expand_icon"
+                    android:layout_width="@dimen/heigt_width_24"
+                    android:layout_height="@dimen/heigt_width_24"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile_edit_expand_more_24"
+                    android:tint="@color/gray" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_expand_change_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_25"
+                        android:layout_marginTop="@dimen/margin_16"
+                        android:layout_marginEnd="@dimen/margin_29"
+                        android:textColorHint="@drawable/edit_color_selector"
+                        app:boxStrokeColor="@color/orange"
+                        app:hintTextColor="@drawable/edit_color_selector">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_new_pass"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="@dimen/margin_5"
+                            android:backgroundTint="@color/black"
+                            android:hint="@string/activity_edit_hint_new_pass"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="@string/activity_edit_value_new_pass"
+                            android:textColor="@color/white"
+                            android:textCursorDrawable="@color/orange"
+                            android:textSize="@dimen/text_size_24" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/tv_show_new_pass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/heigt_width_48"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginEnd="@dimen/margin_43"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:text="@string/activity_edit_text_show_pass"
+                        android:textColor="@color/gray" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_25"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginEnd="@dimen/margin_29"
+                        android:textColorHint="@drawable/edit_color_selector"
+                        app:boxStrokeColor="@color/orange"
+                        app:hintTextColor="@drawable/edit_color_selector">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_reply_pass"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="@dimen/margin_5"
+                            android:backgroundTint="@color/black"
+                            android:hint="@string/activity_edit_hint_reply_pass"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="@string/activity_edit_value_new_pass"
+                            android:textColor="@color/white"
+                            android:textCursorDrawable="@color/orange"
+                            android:textSize="@dimen/text_size_24" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/tv_show_reply_pass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/heigt_width_48"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginEnd="@dimen/margin_43"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:text="@string/activity_edit_text_show_pass"
+                        android:textColor="@color/gray" />
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="@dimen/heigt_width_255"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_39"
+        android:layout_marginBottom="@dimen/margin_41"
+        android:backgroundTint="@color/orange"
+        android:text="@string/activity_edit_button_save"
+        app:cornerRadius="@dimen/text_size_20" />
+</LinearLayout>

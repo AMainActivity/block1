@@ -1,7 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ProfileMainActivity">
+    tools:context=".ProfileInfoActivity">
+    <item
+        android:id="@+id/action_edit"
+        android:icon="@drawable/menu_edit_24"
+        android:title="@string/menu_edit"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_busket"
         android:icon="@drawable/menu_basket_24"

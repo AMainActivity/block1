@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_gray"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ProfileInfoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/menu_person_data"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_56"
+            android:layout_marginTop="@dimen/margin_16"
+            android:background="@drawable/profile_layout_selector"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/heigt_width_24"
+                android:layout_height="@dimen/heigt_width_24"
+                android:layout_marginStart="@dimen/margin_16"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_menu_person_24"
+                android:tint="@drawable/profile_color_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_25_7"
+                android:text="@string/profile_info_ab_title"
+                android:textColor="@drawable/profile_color_selector"
+                android:textSize="@dimen/text_size_18" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/heigt_width_56"
+            android:background="@drawable/profile_layout_selector"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/heigt_width_24"
+                android:layout_height="@dimen/heigt_width_24"
+                android:layout_marginStart="@dimen/margin_16"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_menu_history_24"
+                android:tint="@drawable/profile_color_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_25_7"
+                android:text="@string/activity_profile_menu_history_of_orders"
+                android:textColor="@drawable/profile_color_selector"
+                android:textSize="@dimen/text_size_18" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/heigt_width_56"
+            android:background="@drawable/profile_layout_selector"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/heigt_width_24"
+                android:layout_height="@dimen/heigt_width_24"
+                android:layout_marginStart="@dimen/margin_16"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_menu_adresses_24"
+                android:tint="@drawable/profile_color_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_25_7"
+                android:text="@string/activity_profile_menu_list_of_addresses"
+                android:textColor="@drawable/profile_color_selector"
+                android:textSize="@dimen/text_size_18" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/heigt_width_56"
+            android:background="@drawable/profile_layout_selector"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/heigt_width_24"
+                android:layout_height="@dimen/heigt_width_24"
+                android:layout_marginStart="@dimen/margin_16"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_menu_exit_24"
+                android:tint="@drawable/profile_color_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_25_7"
+                android:text="@string/activity_profile_menu_exit"
+                android:textColor="@drawable/profile_color_selector"
+                android:textSize="@dimen/text_size_18" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>
