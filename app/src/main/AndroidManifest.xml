@@ -18,8 +18,9 @@
         tools:targetApi="s">
         <activity android:name="ama.test.block1.ProfileInfoActivity" />
         <activity android:name="ama.test.block1.ProfileEditActivity" />
+        <activity android:name="ama.test.block1.ProfileMainActivity" />
         <activity
-            android:name="ama.test.block1.ProfileMainActivity"
+            android:name="ama.test.block1.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

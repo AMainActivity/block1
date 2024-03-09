@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="136dp"
+    android:fitsSystemWindows="true"
+    android:gravity="center"
+    android:background="@drawable/rv_item_menu"
+    android:id="@+id/item_bg"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/item_text"
+        android:layout_height="wrap_content"
+        android:text="Меню"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size_24"
+        android:textColor="@drawable/profile_color_selector"
+        />
+
+</LinearLayout>
