@@ -14,23 +14,31 @@
         android:background="@android:color/transparent"
         android:fitsSystemWindows="true">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:layout_collapseMode="pin"
-            app:navigationIcon="@drawable/menu_left_24">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/toolbar_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:gravity="center"
                 android:text="@string/profile_info_ab_title"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_20" />
-        </com.google.android.material.appbar.MaterialToolbar>
 
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@drawable/menu_left_24">
+
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </FrameLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.appcompat.widget.LinearLayoutCompat

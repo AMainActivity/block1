@@ -1,5 +1,10 @@
 package ama.test.block1
 
+import ama.test.block1.UI.FragmentAkcii
+import ama.test.block1.UI.FragmentMain
+import ama.test.block1.UI.FragmentMenu
+import ama.test.block1.UI.FragmentOrders
+import ama.test.block1.UI.FragmentProfileMain
 import ama.test.block1.databinding.ActivityMainBinding
 import android.os.Bundle
 import android.view.View
@@ -79,8 +84,8 @@ class MainActivity : AppCompatActivity() {
 
                     R.id.navigation_delivery -> {
                         showBottomNav()
-                        tagName = FragmentProfile.NAME
-                        FragmentProfile.newInstance()
+                        tagName = FragmentProfileMain.NAME
+                        FragmentProfileMain.newInstance()
                     }
 
                     else -> FragmentMain()

@@ -57,7 +57,7 @@
                     android:tint="@color/orange"
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/photo_camera_24" />
+                    android:src="@drawable/photo_camera_rotate_24" />
             </LinearLayout>
         </FrameLayout>
 

@@ -1,6 +1,8 @@
-package ama.test.block1
+package ama.test.block1.UI
 
-import ama.test.block1.databinding.FragmentAkciiBinding
+import ama.test.block1.MainActivity
+import ama.test.block1.R
+import ama.test.block1.databinding.FragmentMenuBinding
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,11 +11,11 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 
 
-class FragmentAkcii : Fragment() {
+class FragmentMenu : Fragment() {
 
-    private var _binding: FragmentAkciiBinding? = null
+    private var _binding: FragmentMenuBinding? = null
     private val binding
-        get() = _binding ?: throw RuntimeException("FragmentAkciiBinding == null")
+        get() = _binding ?: throw RuntimeException("FragmentMenuBinding == null")
 
 
     override fun onCreateView(
@@ -21,7 +23,7 @@ class FragmentAkcii : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentAkciiBinding.inflate(inflater, container, false)
+        _binding = FragmentMenuBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -31,9 +33,9 @@ class FragmentAkcii : Fragment() {
             remove()
         }
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         activity?.onBackPressedDispatcher?.addCallback(
             viewLifecycleOwner,
             onBackPressedCallback
@@ -44,11 +46,10 @@ class FragmentAkcii : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
     companion object {
-        const val NAME = "FragmentAkcii"
-        fun newInstance(): FragmentAkcii {
-            return FragmentAkcii()
+        const val NAME = "FragmentMenu"
+        fun newInstance(): FragmentMenu {
+            return FragmentMenu()
         }
     }
 }

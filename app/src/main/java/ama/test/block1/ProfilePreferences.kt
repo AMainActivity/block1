@@ -3,7 +3,7 @@ package ama.test.block1
 import android.content.Context
 import android.content.SharedPreferences
 
-class ProfileRepository {
+class ProfilePreferences {
     companion object {
         fun profilePreference(
             context: Context,
@@ -24,7 +24,7 @@ class ProfileRepository {
                 }
             }
 
-        const val PROFILE_PREFERENCES = "PROFILE_PREFERENCES"
-        const val DEFAULT_SETTINGS_PROFILE_PHOTO = "DEFAULT_SETTINGS_PROFILE_PHOTO"
+        private const val PROFILE_PREFERENCES = "PROFILE_PREFERENCES"
+        private const val DEFAULT_SETTINGS_PROFILE_PHOTO = "DEFAULT_SETTINGS_PROFILE_PHOTO"
     }
 }

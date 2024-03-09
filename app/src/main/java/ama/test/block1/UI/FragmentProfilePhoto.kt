@@ -1,6 +1,9 @@
-package ama.test.block1
+package ama.test.block1.UI
 
-import ama.test.block1.ProfileRepository.Companion.userPhoto
+import ama.test.block1.ProfilePreferences
+import ama.test.block1.ProfilePreferences.Companion.userPhoto
+import ama.test.block1.ProfileViewModel
+import ama.test.block1.R
 import ama.test.block1.databinding.FrgmntDialogProfilePhotoBinding
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -58,7 +61,7 @@ class FragmentProfilePhoto : BottomSheetDialogFragment() {
         }
         binding.profilePhotoDelete.setOnClickListener {
             viewModel.changeUriFromCamera(null)
-            ProfileRepository.profilePreference(requireContext()).userPhoto = ""
+            ProfilePreferences.profilePreference(requireContext()).userPhoto = ""
             dialog?.dismiss()
         }
     }

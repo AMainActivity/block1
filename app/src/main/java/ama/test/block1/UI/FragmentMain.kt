@@ -1,11 +1,13 @@
-package ama.test.block1
+package ama.test.block1.UI
 
+import ama.test.block1.MainActivity
+import ama.test.block1.MainAdapter
+import ama.test.block1.MenuItem
 import ama.test.block1.databinding.FragmentMainBinding
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 

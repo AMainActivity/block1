@@ -1,8 +1,10 @@
-package ama.test.block1
+package ama.test.block1.UI
 
-import ama.test.block1.ProfileRepository.Companion.userPhoto
-import ama.test.block1.databinding.ActivityProfileInfoBinding
-import android.content.Intent
+import ama.test.block1.ProfilePreferences
+import ama.test.block1.ProfilePreferences.Companion.userPhoto
+import ama.test.block1.ProfileViewModel
+import ama.test.block1.R
+import ama.test.block1.databinding.FragmentProfileInfoBinding
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,15 +16,14 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 
 
 class FragmentProfileInfo : Fragment() {
 
-    private var _binding: ActivityProfileInfoBinding? = null
+    private var _binding: FragmentProfileInfoBinding? = null
     private val viewModel: ProfileViewModel by activityViewModels()
     private val binding
-        get() = _binding ?: throw RuntimeException("ActivityProfileInfoBinding == null")
+        get() = _binding ?: throw RuntimeException("FragmentProfileInfoBinding == null")
 
     private fun setUserPhoto(uri: Uri?) {
         if (uri == null) {
@@ -32,9 +33,14 @@ class FragmentProfileInfo : Fragment() {
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     override fun onResume() {
         super.onResume()
-        val userPhoto = ProfileRepository.profilePreference(requireContext()).userPhoto
+        val userPhoto = ProfilePreferences.profilePreference(requireContext()).userPhoto
         setUserPhoto(
             if (userPhoto.isNotEmpty()) Uri.parse(
                 userPhoto
@@ -52,14 +58,21 @@ class FragmentProfileInfo : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = ActivityProfileInfoBinding.inflate(inflater, container, false)
+        _binding = FragmentProfileInfoBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    private fun launchFragmentProfileEdit() {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.nav_host_fragment_content_main, FragmentProfileEdit.newInstance())
+            .addToBackStack(FragmentProfileEdit.NAME)
+            .commit()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_edit -> {
-                startActivity(Intent(requireContext(), ProfileEditActivity::class.java))
+                launchFragmentProfileEdit()
                 true
             }
 

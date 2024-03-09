@@ -1,5 +1,7 @@
-package ama.test.block1
+package ama.test.block1.UI
 
+import ama.test.block1.MainActivity
+import ama.test.block1.R
 import ama.test.block1.databinding.FragmentOrdersBinding
 import android.os.Bundle
 import android.view.LayoutInflater

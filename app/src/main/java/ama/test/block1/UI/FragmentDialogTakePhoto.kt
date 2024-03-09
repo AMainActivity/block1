@@ -1,6 +1,8 @@
-package ama.test.block1
+package ama.test.block1.UI
 
-import ama.test.block1.ProfileRepository.Companion.userPhoto
+import ama.test.block1.ProfilePreferences
+import ama.test.block1.ProfilePreferences.Companion.userPhoto
+import ama.test.block1.ProfileViewModel
 import ama.test.block1.databinding.FrgmntDialogTakePhotoBinding
 import android.Manifest
 import android.content.ContentValues
@@ -8,10 +10,8 @@ import android.content.DialogInterface
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
@@ -28,7 +28,6 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
-import java.io.File
 import java.text.SimpleDateFormat
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -134,9 +133,9 @@ class FragmentDialogTakePhoto : DialogFragment() {
                     val msg = "Photo capture succeeded: ${output.savedUri}"
                     val selectedImageUri = output.savedUri ?: throw Exception("no photo")
                     viewModel.changeUriFromCamera(selectedImageUri)
-                    Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
+                    //   Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, msg)
-                    ProfileRepository.profilePreference(requireContext()).userPhoto =
+                    ProfilePreferences.profilePreference(requireContext()).userPhoto =
                         selectedImageUri.toString()
                     dialog?.dismiss()
                 }

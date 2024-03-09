@@ -1,7 +1,10 @@
-package ama.test.block1
+package ama.test.block1.UI
 
-import ama.test.block1.ProfileRepository.Companion.userPhoto
-import ama.test.block1.databinding.ActivityProfileMainBinding
+import ama.test.block1.MainActivity
+import ama.test.block1.ProfilePreferences
+import ama.test.block1.ProfilePreferences.Companion.userPhoto
+import ama.test.block1.R
+import ama.test.block1.databinding.FragmentProfileMainBinding
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,11 +15,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
 
-class FragmentProfile : Fragment() {
+class FragmentProfileMain : Fragment() {
 
-    private var _binding: ActivityProfileMainBinding? = null
+    private var _binding: FragmentProfileMainBinding? = null
     private val binding
-        get() = _binding ?: throw RuntimeException("ActivityProfileMainBinding == null")
+        get() = _binding ?: throw RuntimeException("FragmentProfileMainBinding == null")
 
 
     override fun onCreateView(
@@ -24,7 +27,7 @@ class FragmentProfile : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = ActivityProfileMainBinding.inflate(inflater, container, false)
+        _binding = FragmentProfileMainBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -38,7 +41,7 @@ class FragmentProfile : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val userPhoto = ProfileRepository.profilePreference(requireContext()).userPhoto
+        val userPhoto = ProfilePreferences.profilePreference(requireContext()).userPhoto
         setUserPhoto(
             if (userPhoto.isNotEmpty()) Uri.parse(
                 userPhoto
@@ -52,18 +55,20 @@ class FragmentProfile : Fragment() {
             .addToBackStack(FragmentProfileInfo.NAME)
             .commit()
     }
+
     private val onBackPressedCallback = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
             (requireActivity() as MainActivity).setCurrentFragment(R.id.navigation_main)
             remove()
         }
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.title = null
         binding.nestedScroll.menuPersonData.setOnClickListener {
-            launchFragmentProfileInfo()//startActivity(Intent(requireContext(), ProfileInfoActivity::class.java))
+            launchFragmentProfileInfo()
         }
         activity?.onBackPressedDispatcher?.addCallback(
             viewLifecycleOwner,
@@ -77,9 +82,9 @@ class FragmentProfile : Fragment() {
     }
 
     companion object {
-        const val NAME = "FragmentProfile"
-        fun newInstance(): FragmentProfile {
-            return FragmentProfile()
+        const val NAME = "FragmentProfileMain"
+        fun newInstance(): FragmentProfileMain {
+            return FragmentProfileMain()
         }
     }
 }
