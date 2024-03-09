@@ -1,4 +1,4 @@
-package ama.ripe.block1.ui.theme
+package ama.test.block1.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
