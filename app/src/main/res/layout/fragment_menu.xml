@@ -5,10 +5,13 @@
     android:layout_height="match_parent"
     android:background="@mipmap/background"
     android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    tools:context=".ProfileInfoActivity">
-    <include
-        android:id="@+id/content_main"
-        layout="@layout/content_main" />
+    android:gravity="center"
+    android:orientation="vertical">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Меню"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_24" />
 </LinearLayout>

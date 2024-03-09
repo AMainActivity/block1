@@ -24,26 +24,6 @@ class ProfileInfoActivity : AppCompatActivity() {
             binding.profilePhoto.setImageResource(R.mipmap.notphoto)
         } else {
             binding.profilePhoto.setImageURI(uri)
-           /* val bitmap = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                ImageDecoder.decodeBitmap(
-                    ImageDecoder.createSource(
-                        contentResolver,
-                        uri
-                    )
-                )
-            } else {
-                MediaStore.Images.Media.getBitmap(
-                    contentResolver,
-                    uri
-                )
-            }
-
-            binding.profilePhoto.setImageBitmap(
-                bitmap.copy(
-                    Bitmap.Config.ARGB_8888,
-                    false
-                ).toCircular()
-            )*/
         }
     }
 

@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainAdapter(private val menuItems: List<MenuItem>) :
     RecyclerView.Adapter<MainAdapter.ViewHolder>() {
-    var onMenuItemClickListener: ((MenuItem) -> Unit)? = null
+    var onMenuItemClickListener: ((Int) -> Unit)? = null
 
     class ViewHolder(
         val binding: MenuItemBinding
@@ -28,7 +28,7 @@ class MainAdapter(private val menuItems: List<MenuItem>) :
         val bg = viewHolder.binding.itemBg
         bg.setBackgroundResource(menuItem.resId)
         binding.root.setOnClickListener {
-            onMenuItemClickListener?.invoke(menuItem)
+            onMenuItemClickListener?.invoke(menuItem.munuId)
         }
     }
 
