@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_bg"
     android:layout_width="match_parent"
-    android:layout_height="136dp"
+    android:layout_height="@dimen/heigt_width_136"
+    android:background="@drawable/rv_item_menu"
+    android:descendantFocusability="blocksDescendants"
     android:fitsSystemWindows="true"
     android:gravity="center"
-    android:background="@drawable/rv_item_menu"
-    android:id="@+id/item_bg"
-    android:descendantFocusability="blocksDescendants"
     android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
         android:id="@+id/item_text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Меню"
+        android:text="@string/frgmnt_main_menu"
         android:textAllCaps="true"
-        android:textSize="@dimen/text_size_24"
         android:textColor="@drawable/profile_color_selector"
-        />
+        android:textSize="@dimen/text_size_24" />
 
 </LinearLayout>

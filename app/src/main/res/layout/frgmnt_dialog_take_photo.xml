@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
+    android:layout_margin="@dimen/margin_10"
     android:background="?android:attr/selectableItemBackground"
     android:descendantFocusability="blocksDescendants"
     app:cardBackgroundColor="@color/orange"
-    app:cardCornerRadius="7dp"
-    app:cardElevation="2dp"
+    app:cardCornerRadius="@dimen/margin_7"
+    app:cardElevation="@dimen/margin_2"
     app:cardUseCompatPadding="true"
     app:strokeColor="@color/orange"
-    app:strokeWidth="2dp">
+    app:strokeWidth="@dimen/margin_2">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,8 +25,7 @@
             <androidx.camera.view.PreviewView
                 android:id="@+id/camera_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_height="match_parent" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -40,24 +39,24 @@
                     android:id="@+id/image_capture_button"
                     android:layout_width="@dimen/margin_56"
                     android:layout_height="@dimen/margin_56"
-                    android:contentDescription="Фото"
+                    android:layout_marginEnd="@dimen/margin_17"
+                    android:background="@color/transparent"
+                    android:contentDescription="@string/dialog_camera_photo"
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
-                    android:tint="@color/orange"
-                    android:background="@color/transparent"
-                    android:layout_marginEnd="@dimen/margin_17"
-                    android:src="@drawable/photo_camera_24" />
+                    android:src="@drawable/photo_camera_24"
+                    android:tint="@color/orange" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/camera_swith_button"
                     android:layout_width="@dimen/margin_56"
                     android:layout_height="@dimen/margin_56"
-                    android:contentDescription="Сменить камеру"
                     android:background="@color/transparent"
-                    android:tint="@color/orange"
+                    android:contentDescription="@string/dialog_camera_rotate"
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/photo_camera_rotate_24" />
+                    android:src="@drawable/photo_camera_rotate_24"
+                    android:tint="@color/orange" />
             </LinearLayout>
         </FrameLayout>
 

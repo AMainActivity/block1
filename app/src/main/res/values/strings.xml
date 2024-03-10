@@ -28,4 +28,14 @@
     <string name="activity_profile_menu_exit">Выйти</string>
     <string name="activity_profile_menu_list_of_addresses">Список адресов</string>
     <string name="activity_profile_menu_history_of_orders">История заказов</string>
+    <string name="frgmnt_main_menu">Меню</string>
+    <string name="frgmnt_main">Главная</string>
+    <string name="frgmnt_main_akcii">Акции</string>
+    <string name="frgmnt_main_orders">Заказы</string>
+    <string name="frgmnt_main_delivery">Доставка</string>
+    <string name="dialog_photo_select">Выбрать фото</string>
+    <string name="dialog_photo_take">Сделать снимок</string>
+    <string name="dialog_photo_delete">Удалить</string>
+    <string name="dialog_camera_photo">Фото</string>
+    <string name="dialog_camera_rotate">Сменить камеру</string>
 </resources>

@@ -4,24 +4,24 @@
     <item
         android:id="@+id/navigation_main"
         android:icon="@drawable/bottom_menu_main_24"
-        android:title="Главная" />
+        android:title="@string/frgmnt_main" />
 
     <item
         android:id="@+id/navigation_menu"
         android:icon="@drawable/bottom_menu_24"
-        android:title="Меню" />
+        android:title="@string/frgmnt_main_menu" />
 
     <item
         android:id="@+id/navigation_akcii"
         android:icon="@drawable/bottom_menu_akcii_24"
-        android:title="Акции" />
+        android:title="@string/frgmnt_main_akcii" />
     <item
         android:id="@+id/navigation_orders"
         android:icon="@drawable/bottom_menu_orders_24"
-        android:title="Заказы" />
+        android:title="@string/frgmnt_main_orders" />
     <item
         android:id="@+id/navigation_delivery"
         android:icon="@drawable/profile_menu_person_24"
-        android:title="Доставка" />
+        android:title="@string/frgmnt_main_delivery" />
 
 </menu>

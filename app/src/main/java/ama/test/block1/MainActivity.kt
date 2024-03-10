@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setBottomNavigation() {
-        // val orgFragment = FragmentMain()
         setCurrentFragment(R.id.navigation_main)
         binding.contentMain.bottomNavigationView.setOnItemSelectedListener {
             setCurrentFragment(
@@ -50,7 +49,6 @@ class MainActivity : AppCompatActivity() {
 
     fun setCurrentFragment(menuId: Int) {
 
-        var tagName = ""
         if (menuId == R.id.navigation_main) supportFragmentManager.popBackStack(
             null,
             FragmentManager.POP_BACK_STACK_INCLUSIVE
@@ -60,38 +58,32 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_host_fragment_content_main, when (menuId) {
                     R.id.navigation_main -> {
                         hideBottomNav()
-                        tagName = FragmentMain.NAME
                         FragmentMain.newInstance()
                     }
 
                     R.id.navigation_menu -> {
                         showBottomNav()
-                        tagName = FragmentMenu.NAME
                         FragmentMenu.newInstance()
                     }
 
                     R.id.navigation_akcii -> {
                         showBottomNav()
-                        tagName = FragmentAkcii.NAME
                         FragmentAkcii.newInstance()
                     }
 
                     R.id.navigation_orders -> {
                         showBottomNav()
-                        tagName = FragmentOrders.NAME
                         FragmentOrders.newInstance()
                     }
 
                     R.id.navigation_delivery -> {
                         showBottomNav()
-                        tagName = FragmentProfileMain.NAME
                         FragmentProfileMain.newInstance()
                     }
 
                     else -> FragmentMain()
                 }
             )
-            //addToBackStack(tagName)
             commit()
         }
         selectBottomMenuById(menuId)

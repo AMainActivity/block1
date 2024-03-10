@@ -24,29 +24,10 @@ class FragmentProfilePhoto : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FrgmntDialogProfilePhotoBinding.inflate(inflater, container, false)
-        //  setDialogAttributes()
         return binding.root
     }
 
-    /* override fun onCreateDialog(savedInstanceState: Bundle?): BottomSheetDialog {
-         return BottomSheetDialog(requireContext(), R.style.MyTransparentBottomSheetDialogTheme)
-     }*/
     override fun getTheme() = R.style.MyTransparentBottomSheetDialogTheme
-    override fun onStart() {
-        super.onStart()
-        //  setDialogLayout()
-    }
-
-    /*private fun setDialogLayout() {
-        val width = ViewGroup.LayoutParams.MATCH_PARENT
-        val height = ViewGroup.LayoutParams.WRAP_CONTENT
-        dialog?.window?.setLayout(width, height)
-    }*/
-
-    /*private fun setDialogAttributes() {
-        dialog?.window?.requestFeature(Window.FEATURE_NO_TITLE)
-        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-    }*/
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -72,16 +53,9 @@ class FragmentProfilePhoto : BottomSheetDialogFragment() {
     }
 
     companion object {
-        // private const val ARG_JOB_INFO = "jobInfo"
         const val NAME = "FragmentProfilePhoto"
-
-        //  const val PARSE_ERROR = "Required param jobInfo is absent"
         fun newInstance(): FragmentProfilePhoto {
-            return FragmentProfilePhoto()/*.apply {
-                arguments = Bundle().apply {
-                    putParcelable(ARG_JOB_INFO, jobModel)
-                }
-            }*/
+            return FragmentProfilePhoto()
         }
     }
 }

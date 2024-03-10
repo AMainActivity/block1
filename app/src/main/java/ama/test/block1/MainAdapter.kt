@@ -28,7 +28,7 @@ class MainAdapter(private val menuItems: List<MenuItem>) :
         val bg = viewHolder.binding.itemBg
         bg.setBackgroundResource(menuItem.resId)
         binding.root.setOnClickListener {
-            onMenuItemClickListener?.invoke(menuItem.munuId)
+            onMenuItemClickListener?.invoke(menuItem.menuId)
         }
     }
 

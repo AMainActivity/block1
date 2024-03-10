@@ -17,7 +17,7 @@ class ProfilePreferences {
         }
 
         var SharedPreferences.userPhoto
-            get() = getString(DEFAULT_SETTINGS_PROFILE_PHOTO, "") ?: ""
+            get() = getString(DEFAULT_SETTINGS_PROFILE_PHOTO, EMPTY_STRING) ?: EMPTY_STRING
             set(value) {
                 editMe {
                     it.putString(DEFAULT_SETTINGS_PROFILE_PHOTO, value)
@@ -26,5 +26,6 @@ class ProfilePreferences {
 
         private const val PROFILE_PREFERENCES = "PROFILE_PREFERENCES"
         private const val DEFAULT_SETTINGS_PROFILE_PHOTO = "DEFAULT_SETTINGS_PROFILE_PHOTO"
+        private const val EMPTY_STRING = ""
     }
 }

@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:background="@mipmap/background"
     android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    tools:context=".ProfileInfoActivity">
+    android:orientation="vertical">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -27,7 +26,7 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="match_parent"
-                    android:layout_height="225dp"
+                    android:layout_height="@dimen/heigt_width_225"
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
                     android:src="@drawable/main_activity_bg"
@@ -35,7 +34,7 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="47dp"
+                    android:layout_height="@dimen/heigt_width_47"
                     android:layout_gravity="center"
                     android:fitsSystemWindows="true"
                     android:src="@drawable/splash_niama" />

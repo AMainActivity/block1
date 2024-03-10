@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
+    android:layout_margin="@dimen/margin_10"
     android:background="?android:attr/selectableItemBackground"
     android:descendantFocusability="blocksDescendants"
     app:cardBackgroundColor="@color/orange"
-    app:cardCornerRadius="7dp"
-    app:cardElevation="2dp"
+    app:cardCornerRadius="@dimen/margin_7"
+    app:cardElevation="@dimen/margin_2"
     app:cardUseCompatPadding="true"
     app:strokeColor="@color/orange"
-    app:strokeWidth="2dp">
+    app:strokeWidth="@dimen/margin_2">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_25_7"
-                android:text="Выбрать фото"
+                android:text="@string/dialog_photo_select"
                 android:textColor="@drawable/profile_color_selector"
                 android:textSize="@dimen/text_size_18" />
 
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_25_7"
-                android:text="Сделать снимок"
+                android:text="@string/dialog_photo_take"
                 android:textColor="@drawable/profile_color_selector"
                 android:textSize="@dimen/text_size_18" />
 
@@ -96,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_25_7"
-                android:text="Удалить"
+                android:text="@string/dialog_photo_delete"
                 android:textColor="@drawable/profile_color_selector"
                 android:textSize="@dimen/text_size_18" />
 

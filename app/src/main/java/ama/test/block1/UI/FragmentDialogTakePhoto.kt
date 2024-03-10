@@ -5,6 +5,7 @@ import ama.test.block1.ProfilePreferences.Companion.userPhoto
 import ama.test.block1.ProfileViewModel
 import ama.test.block1.databinding.FrgmntDialogTakePhotoBinding
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.DialogInterface
 import android.content.pm.PackageManager
@@ -14,6 +15,7 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.util.Size
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -69,14 +71,7 @@ class FragmentDialogTakePhoto : DialogFragment() {
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        if (allPermissionsGranted()) {
-            startCamera()
-        } else {
-            requestPermissions()
-        }
-
+    private fun cameraButtonClickListener() {
         binding.imageCaptureButton.setOnClickListener { takePhoto() }
         binding.cameraSwithButton.setOnClickListener {
             camInstance = if (camInstance == CameraSelector.DEFAULT_BACK_CAMERA)
@@ -92,6 +87,16 @@ class FragmentDialogTakePhoto : DialogFragment() {
                 requestPermissions()
             }
         }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        if (allPermissionsGranted()) {
+            startCamera()
+        } else {
+            requestPermissions()
+        }
+        cameraButtonClickListener()
         cameraExecutor = Executors.newSingleThreadExecutor()
     }
 
@@ -101,8 +106,9 @@ class FragmentDialogTakePhoto : DialogFragment() {
     }
 
 
+    @SuppressLint("SimpleDateFormat")
     private fun takePhoto() {
-        val imageCapture = imageCapture ?: return
+        imageCapture = imageCapture ?: return
         val name = SimpleDateFormat(FILENAME_FORMAT)
             .format(System.currentTimeMillis())
         val contentValues = ContentValues().apply {
@@ -119,8 +125,11 @@ class FragmentDialogTakePhoto : DialogFragment() {
                 contentValues
             )
             .build()
+        tryTakePicture(outputOptions)
+    }
 
-        imageCapture.takePicture(
+    private fun tryTakePicture(outputOptions: ImageCapture.OutputFileOptions) {
+        imageCapture?.takePicture(
             outputOptions,
             ContextCompat.getMainExecutor(requireContext()),
             object : ImageCapture.OnImageSavedCallback {
@@ -133,7 +142,6 @@ class FragmentDialogTakePhoto : DialogFragment() {
                     val msg = "Photo capture succeeded: ${output.savedUri}"
                     val selectedImageUri = output.savedUri ?: throw Exception("no photo")
                     viewModel.changeUriFromCamera(selectedImageUri)
-                    //   Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, msg)
                     ProfilePreferences.profilePreference(requireContext()).userPhoto =
                         selectedImageUri.toString()
@@ -153,7 +161,14 @@ class FragmentDialogTakePhoto : DialogFragment() {
                 .also {
                     it.setSurfaceProvider(binding.cameraView.surfaceProvider)
                 }
-            imageCapture = ImageCapture.Builder().build()
+            /*val screenSize = Size(600, 800)
+            val resolutionSelector = ResolutionSelector.Builder().setResolutionStrategy(
+                ResolutionStrategy(
+                    screenSize,
+                    ResolutionStrategy.FALLBACK_RULE_NONE
+                )
+            ).build()*/
+            imageCapture = ImageCapture.Builder().setTargetResolution(Size(600, 800)).build()
             val cameraSelector = camInstance
 
             try {

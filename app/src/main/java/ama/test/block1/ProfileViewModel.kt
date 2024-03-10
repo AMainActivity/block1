@@ -6,8 +6,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class ProfileViewModel : ViewModel() {
-    private val _profilePhoto = MutableLiveData<Uri>()
-    val profilePhoto: LiveData<Uri> = _profilePhoto
+    private val _profilePhoto = MutableLiveData<Uri?>()
+    val profilePhoto: LiveData<Uri?> = _profilePhoto
 
     fun changeUriFromCamera(uri: Uri?) {
         _profilePhoto.value = uri

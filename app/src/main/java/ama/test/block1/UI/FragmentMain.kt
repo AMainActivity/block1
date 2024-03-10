@@ -3,6 +3,7 @@ package ama.test.block1.UI
 import ama.test.block1.MainActivity
 import ama.test.block1.MainAdapter
 import ama.test.block1.MenuItem
+import ama.test.block1.R
 import ama.test.block1.databinding.FragmentMainBinding
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -31,19 +32,50 @@ class FragmentMain : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val menuIyemList = MenuItem.createMenuItemList()
+        val menuIyemList = createMenuItemList()
         val adapter = MainAdapter(menuIyemList)
         binding.recyclerView.adapter = adapter
         adapter.onMenuItemClickListener = {
-            // (requireActivity() as MainActivity).selectBottomMenuById(it)
             (requireActivity() as MainActivity).setCurrentFragment(it)
-
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun createMenuItemList(): ArrayList<MenuItem> {
+        val list = ArrayList<MenuItem>()
+        list.add(
+            MenuItem(
+                getString(R.string.frgmnt_main_menu),
+                R.drawable.rv_item_menu,
+                R.id.navigation_menu
+            )
+        )
+        list.add(
+            MenuItem(
+                getString(R.string.frgmnt_main_akcii),
+                R.drawable.rv_item_akcii,
+                R.id.navigation_akcii
+            )
+        )
+        list.add(
+            MenuItem(
+                getString(R.string.frgmnt_main_orders),
+                R.drawable.rv_item_otzyvy,
+                R.id.navigation_orders
+            )
+        )
+        list.add(
+            MenuItem(
+                getString(R.string.frgmnt_main_delivery),
+                R.drawable.rv_item_delivery,
+                R.id.navigation_delivery
+            )
+        )
+        return list
     }
 
     companion object {
