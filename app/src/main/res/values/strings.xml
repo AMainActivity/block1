@@ -1,3 +1,31 @@
 <resources>
-    <string name="app_name">block1</string>
+    <string name="app_name">Вёрстка</string>
+    <string name="menu_edit">Редактировать</string>
+    <string name="menu_cart">Корзина</string>
+    <string name="profile_name">Ольга Петрова</string>
+    <string name="profile_birthday_hint_text">Дата рождения</string>
+    <string name="profile_birthday_value_text">3.07.1990</string>
+    <string name="profile_phone_number_hint_text">Номер телефона</string>
+    <string name="profile_phone_number_value_text">8 (927) 235–4587</string>
+    <string name="profile_email_hint_text">Email</string>
+    <string name="profile_email_value_text">Olg@gmail.com</string>
+    <string name="profile_info_ab_title">Личные данные</string>
+    <string name="profile_main_card_name">Карта сушиеда</string>
+    <string name="profile_main_skidka">Скидка 5%</string>
+    <string name="profile_name_ab_title">Личный кабинет</string>
+    <string name="profile_edit_ab_title">Редактирование</string>
+    <string name="activity_edit_text_hint_name">Имя</string>
+    <string name="activity_edit_text_value_name">Ольга</string>
+    <string name="activity_edit_hint_sirname">Фамилия</string>
+    <string name="activity_edit_value_sirname">Петрова</string>
+    <string name="activity_edit_value_birthday">5.07.1990</string>
+    <string name="activity_edit_button_change_pass">Изменить пароль</string>
+    <string name="activity_edit_hint_new_pass">Новый пароль</string>
+    <string name="activity_edit_value_new_pass">1234567</string>
+    <string name="activity_edit_text_show_pass">Показать</string>
+    <string name="activity_edit_hint_reply_pass">Подтверждение пароля</string>
+    <string name="activity_edit_button_save">Сохранить</string>
+    <string name="activity_profile_menu_exit">Выйти</string>
+    <string name="activity_profile_menu_list_of_addresses">Список адресов</string>
+    <string name="activity_profile_menu_history_of_orders">История заказов</string>
 </resources>

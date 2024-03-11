@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/margin_41"
+    android:layout_marginTop="@dimen/margin_216"
+    android:orientation="vertical"
+    tools:context=".ProfileInfoActivity">
+
+    <TextView
+        style="@style/MainTextViewStyle"
+        android:layout_marginTop="@dimen/margin_17"
+        android:layout_marginBottom="@dimen/margin_56"
+        android:text="@string/profile_name"
+        android:textSize="@dimen/text_size_24"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/SecondTextViewStyle"
+        android:text="@string/profile_birthday_hint_text" />
+
+    <TextView
+        style="@style/MainTextViewStyle"
+        android:layout_marginBottom="@dimen/margin_16"
+        android:text="@string/profile_birthday_value_text"
+        android:textSize="@dimen/text_size_22" />
+
+    <TextView
+        style="@style/SecondTextViewStyle"
+        android:text="@string/profile_phone_number_hint_text" />
+
+    <TextView
+        style="@style/MainTextViewStyle"
+        android:layout_marginBottom="@dimen/margin_31"
+        android:text="@string/profile_phone_number_value_text"
+        android:textSize="@dimen/text_size_22" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1"
+        android:layout_marginStart="@dimen/margin_1"
+        android:layout_marginBottom="@dimen/margin_32"
+        android:background="@color/gray" />
+
+    <TextView
+        style="@style/SecondTextViewStyle"
+        android:text="@string/profile_email_hint_text" />
+
+    <TextView
+        style="@style/MainTextViewStyle"
+        android:layout_marginBottom="@dimen/margin_31"
+        android:text="@string/profile_email_value_text"
+        android:textSize="@dimen/text_size_22" />
+</LinearLayout>
+
+
