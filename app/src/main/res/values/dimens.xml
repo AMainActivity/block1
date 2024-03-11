@@ -1,13 +1,18 @@
 <resources>
     <dimen name="splash_animation_duration">3000</dimen>
     <dimen name="margin_1">1dp</dimen>
+    <dimen name="margin_2">2dp</dimen>
+    <dimen name="margin_7">7dp</dimen>
     <dimen name="margin_17">17dp</dimen>
     <dimen name="heigt_width_38">38dp</dimen>
     <dimen name="heigt_width_48">48dp</dimen>
+    <dimen name="heigt_width_47">47dp</dimen>
     <dimen name="heigt_width_56">56dp</dimen>
     <dimen name="heigt_width_255">255dp</dimen>
+    <dimen name="heigt_width_136">136dp</dimen>
     <dimen name="heigt_width_24">24dp</dimen>
     <dimen name="heigt_width_110">110dp</dimen>
+    <dimen name="heigt_width_225">225dp</dimen>
     <dimen name="margin_56">56dp</dimen>
     <dimen name="margin_39">39dp</dimen>
     <dimen name="margin_216">216dp</dimen>

@@ -42,14 +42,13 @@ android {
         }
     }
 }
-//val ktlint by configurations.creating
 dependencies {
-   /* ktlint("com.pinterest.ktlint:ktlint-cli:1.1.1") {
-        attributes {
-            attribute(Bundling.BUNDLING_ATTRIBUTE, objects.named(Bundling.EXTERNAL))
-        }
-    }*/
+    implementation("androidx.camera:camera-camera2:1.3.2")
+    implementation("androidx.camera:camera-lifecycle:1.3.2")
+    implementation("androidx.camera:camera-view:1.3.2")
 
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("androidx.cardview:cardview:1.0.0")
     implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
