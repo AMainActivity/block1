@@ -75,11 +75,11 @@ class FragmentDialogTakePhoto : DialogFragment() {
         binding.imageCaptureButton.setOnClickListener { takePhoto() }
         binding.cameraSwithButton.setOnClickListener {
             camInstance = if (camInstance == CameraSelector.DEFAULT_BACK_CAMERA)
-                CameraSelector.DEFAULT_FRONT_CAMERA;
+                CameraSelector.DEFAULT_FRONT_CAMERA
             else
-                CameraSelector.DEFAULT_BACK_CAMERA;
+                CameraSelector.DEFAULT_BACK_CAMERA
 
-            cameraProvider.unbindAll();
+            cameraProvider.unbindAll()
 
             if (allPermissionsGranted()) {
                 startCamera()

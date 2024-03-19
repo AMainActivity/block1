@@ -5,10 +5,16 @@ import ama.test.block1.ProfilePreferences.Companion.userPhoto
 import ama.test.block1.ProfileViewModel
 import ama.test.block1.R
 import ama.test.block1.databinding.FrgmntDialogProfilePhotoBinding
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContract
 import androidx.fragment.app.activityViewModels
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -16,6 +22,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 class FragmentProfilePhoto : BottomSheetDialogFragment() {
     private var _binding: FrgmntDialogProfilePhotoBinding? = null
     private val viewModel: ProfileViewModel by activityViewModels()
+    private lateinit var launchImageGalery: ActivityResultLauncher<String>
     private val binding: FrgmntDialogProfilePhotoBinding
         get() = _binding ?: throw RuntimeException("FrgmntDialogProfilePhotoBinding == null")
 
@@ -31,6 +38,37 @@ class FragmentProfilePhoto : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val contractImageGallery = object : ActivityResultContract<String, Uri?>() {
+            override fun createIntent(context: Context, input: String): Intent {
+                val intent = Intent(Intent.ACTION_PICK)
+                intent.setAction(Intent.ACTION_OPEN_DOCUMENT)
+                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                return Intent(intent).apply { type = input }
+            }
+
+            override fun parseResult(resultCode: Int, intent: Intent?): Uri? {
+                return intent?.data
+            }
+
+        }
+        launchImageGalery = registerForActivityResult(contractImageGallery)
+        {
+            Log.e("selectedImageUri", it.toString())
+            val selectedImageUri = it ?: throw Exception("no photo")
+            /* requireActivity().grantUriPermission(
+                 requireActivity().packageName,
+                 selectedImageUri,
+                 Intent.FLAG_GRANT_READ_URI_PERMISSION
+             );*/
+             val flag = Intent.FLAG_GRANT_READ_URI_PERMISSION
+             requireContext().contentResolver.takePersistableUriPermission(selectedImageUri, flag)
+            viewModel.changeUriFromCamera(selectedImageUri)
+            ProfilePreferences.profilePreference(requireContext()).userPhoto =
+                selectedImageUri.toString()
+            Log.e("selectedImageUri2", it.toString())
+
+            dialog?.dismiss()
+        }
         binding.profilePhotoCamera.setOnClickListener {
             val d = FragmentDialogTakePhoto.newInstance()
             d.show(
@@ -44,6 +82,9 @@ class FragmentProfilePhoto : BottomSheetDialogFragment() {
             viewModel.changeUriFromCamera(null)
             ProfilePreferences.profilePreference(requireContext()).userPhoto = ""
             dialog?.dismiss()
+        }
+        binding.profilePhotoFromGalery.setOnClickListener {
+            launchImageGalery.launch("image/*")
         }
     }
 
