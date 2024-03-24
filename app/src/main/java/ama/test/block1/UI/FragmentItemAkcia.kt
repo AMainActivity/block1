@@ -11,6 +11,18 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.squareup.picasso.Picasso
+import kotlinx.datetime.Clock
+import kotlinx.datetime.Instant
+import kotlinx.datetime.LocalDate
+import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.format
+import kotlinx.datetime.format.FormatStringsInDatetimeFormats
+import kotlinx.datetime.format.MonthNames
+import kotlinx.datetime.format.byUnicodePattern
+import kotlinx.datetime.format.char
+import kotlinx.datetime.number
+import kotlinx.datetime.toLocalDateTime
 
 
 class FragmentItemAkcia : Fragment() {
@@ -43,14 +55,15 @@ class FragmentItemAkcia : Fragment() {
             viewLifecycleOwner,
             onBackPressedCallback
         )
-        binding.akciaTvDate.text = dataAkcia?.dateStart.toString()
+        binding.akciaTvDate.text = getFormattedDate(dataAkcia?.dateStart)
         binding.akciaTvTitle.text = dataAkcia?.name.toString()
         Picasso.get().load(dataAkcia?.urlImage)
             .into(binding.akciaIv)
         binding.akciaCv.setOnClickListener {
-            FragmentDialogAkciaInfo.newInstance(dataAkcia?:throw Exception("не на что смотреть")).show(
-                childFragmentManager, FragmentDialogAkciaInfo.NAME
-            )
+            FragmentDialogAkciaInfo.newInstance(dataAkcia ?: throw Exception("не на что смотреть"))
+                .show(
+                    childFragmentManager, FragmentDialogAkciaInfo.NAME
+                )
         }
     }
 
@@ -67,6 +80,24 @@ class FragmentItemAkcia : Fragment() {
         args.getParcelable<DataAkcii>(ARG_DATA_ITEM_AKCIA)?.let {
             dataAkcia = it
         }
+    }
+
+    private val RUSSIAN_MONTHS: MonthNames = MonthNames(
+        listOf(
+            "января", "февраля", "марта", "апреля", "мая", "июня",
+            "июля", "сентября", "октября", "ноября", "Nov", "декабря"
+        )
+    )
+
+    private fun getFormattedDate(dateTime: Long?): String {
+        val instant = Instant.fromEpochMilliseconds(dateTime ?: 0)
+        return instant.toLocalDateTime(TimeZone.currentSystemDefault()).date.format(LocalDate.Format {
+            dayOfMonth()
+            char(' ')
+            monthName(RUSSIAN_MONTHS)
+            chars(" ")
+            year()
+        })
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

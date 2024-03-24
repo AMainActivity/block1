@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Летнее меню",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_category/menu_summer.png"
+  },
+  {
+    "id": 2,
+    "name": "Роллы",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_category/menu_rolls.png"
+  },
+  {
+    "id": 3,
+    "name": "Сеты",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_category/menu_sets.png"
+  },
+  {
+    "id": 4,
+    "name": "Суши",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_category/menu_susi.png"
+  }
+]

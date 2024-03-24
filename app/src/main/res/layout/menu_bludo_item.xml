@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/margin_216"
+    android:descendantFocusability="blocksDescendants"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/item_bg"
+        android:layout_width="match_parent"
+        android:layout_height="216dp"
+        android:fitsSystemWindows="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/rv_item_menu"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginEnd="168dp"
+            android:layout_marginBottom="1dp"
+            android:text="название блюда"
+            android:textColor="@drawable/profile_color_selector"
+            android:textSize="@dimen/text_size_24" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginEnd="128dp"
+            android:layout_marginBottom="17dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="название блюданазвание блюданазвание блюданазвание блюданазвание блюданазвание блюдаблюданазвание блюдаблюданазвание блюдаблюданазвание блюдаблюданазвание блюда"
+            android:textColor="@color/gray"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</FrameLayout>

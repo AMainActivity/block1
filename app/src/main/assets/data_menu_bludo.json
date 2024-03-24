@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "category_id": 2,
+    "name": "Цезарь с креветками",
+    "description": "Классическое сочетание салатов Айсберг и креветками с курицей, соусом \"Цезарь\", томатами, сыром Пармезан и гренками.",
+    "cena": "₽ 475",
+    "calory": "301 ккал",
+    "massa": "190 г",
+    "sostav": "Салат Айсберг, Креветки, Сыр",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll1.png"
+  },
+  {
+    "id": 2,
+    "category_id": 2,
+    "name": "Филадельфия",
+    "description": "Ролл со свежим лососем, авокадо, огурцом и нежным сливочным сыром.",
+    "cena": "₽ 350",
+    "calory": "406 ккал",
+    "massa": "210 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll3.png"
+  },
+  {
+    "id": 3,
+    "category_id": 2,
+    "name": "Кунсей сакана",
+    "description": "Ролл с копчёным лососем, угрём, авокадо, сливочным сыром, воздушным рисом, сушёными томатами и луком сибулет",
+    "cena": "₽ 679",
+    "calory": "350 ккал",
+    "massa": "180 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll4.png"
+  },
+  {
+    "id": 4,
+    "category_id": 2,
+    "name": "Абури с гребешком",
+    "description": "Ролл из снежного краба, огурца, майонеза и свежего гребешка в икре тобико под запечённой шапочкой из трёх видов сыра. Украшен соусом шрирача и микрозеленью. ",
+    "cena": "₽ 589",
+    "calory": "460 ккал",
+    "massa": "240 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll5.png"
+  },
+  {
+    "id": 5,
+    "category_id": 2,
+    "name": "Кицунэ премиум",
+    "description": "Ролл из свежего лосося, авокадо и соуса айоле юдзу. Сверху покрыт цельным филе угря и соусом терияки. Украшен рыбным пабираном и микрозеленью.",
+    "cena": "₽ 999",
+    "calory": "443 ккал",
+    "massa": "230 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll2.png"
+  },
+  {
+    "id": 6,
+    "category_id": 1,
+    "name": "Шоколадный ролл",
+    "description": "Какао-блинчик с начинкой из карамели и сливочно-шоколадного крема",
+    "cena": "₽ 349",
+    "calory": "445 ккал",
+    "massa": "145 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll6.png"
+  },
+  {
+    "id": 7,
+    "category_id": 1,
+    "name": "Латте 300 мл",
+    "description": "Кофе, молоко",
+    "cena": "₽ 249",
+    "calory": "194 ккал",
+    "massa": "300 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll7.png"
+  },
+  {
+    "id": 8,
+    "category_id": 1,
+    "name": "Смузи Банан-Клубника",
+    "description": "Ставшее классикой сочетание. Отличный диетический источник калия, клетчатки и антиоксидантов.",
+    "cena": "₽ 259",
+    "calory": "98 ккал",
+    "massa": "285 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll8.png"
+  },
+  {
+    "id": 9,
+    "category_id": 1,
+    "name": "Авторский чай Облепиховый",
+    "description": "Спелая облепиха,черный чай, мед и яблочный сок наполнят вас хорошим настроением.",
+    "cena": "₽ 399",
+    "calory": "209 ккал",
+    "massa": "500 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll9.png"
+  },
+  {
+    "id": 10,
+    "category_id": 1,
+    "name": "Фреш апельсиновый 300 мл",
+    "description": "апельсиновый сок.",
+    "cena": "₽ 299",
+    "calory": "0 ккал",
+    "massa": "300 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll10.png"
+  },
+  {
+    "id": 11,
+    "category_id": 3,
+    "name": "Сидзуока",
+    "description": "Сет из роллов: Эби Шарп, Кани Блючиз, Калифорния, Сяке Бонито, Унаги Кранч и Филадельфия Лайт. 36 шт.",
+    "cena": "₽ 2999",
+    "calory": "2217 ккал",
+    "massa": "1 кг",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll11.png"
+  },
+  {
+    "id": 12,
+    "category_id": 3,
+    "name": "Хигаси",
+    "description": "Сет из роллов: Канада, Эби Шарп и Эби Куранчи. 18 шт.",
+    "cena": "₽ 1499",
+    "calory": "1107 ккал",
+    "massa": "570 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll12.png"
+  },
+  {
+    "id": 13,
+    "category_id": 3,
+    "name": "Акаиси",
+    "description": "Сет из 4 запечённых роллов с лососем, гребешком, угрём и отварной креветкой под сырной шапочкой из трёх видов сыра. 24 шт.",
+    "cena": "₽ 2299",
+    "calory": "2035 ккал",
+    "massa": "950 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll13.png"
+  },
+  {
+    "id": 14,
+    "category_id": 3,
+    "name": "Сет маки",
+    "description": "Каппа маки, Авокадо маки, Унаги маки, Сяке маки, Магуро маки. 30 шт.",
+    "cena": "₽ 1269",
+    "calory": "941 ккал",
+    "massa": "500 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll14.png"
+  },
+  {
+    "id": 15,
+    "category_id": 3,
+    "name": "Натори",
+    "description": "Сет из роллов: Чикен Том ям, Эби Куранчи, Чикен Рору, Кани Блючиз, Кани Киюри. 30 шт.",
+    "cena": "₽ 1999",
+    "calory": "1943 ккал",
+    "massa": "930 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll15.png"
+  },
+  {
+    "id": 16,
+    "category_id": 4,
+    "name": "Сяке",
+    "description": "с лососем",
+    "cena": "₽ 199",
+    "calory": "81 ккал",
+    "massa": "35 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll16.png"
+  },
+  {
+    "id": 17,
+    "category_id": 4,
+    "name": "Унаги",
+    "description": "С угрем",
+    "cena": "₽ 139",
+    "calory": "58 ккал",
+    "massa": "30 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll17.png"
+  },
+  {
+    "id": 18,
+    "category_id": 4,
+    "name": "Спайс Эби",
+    "description": "С креветкой и соусом спайс.",
+    "cena": "₽ 149",
+    "calory": "96 ккал",
+    "massa": "35 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll18.png"
+  },
+  {
+    "id": 19,
+    "category_id": 4,
+    "name": "Суши запеченные с лососем 3 шт",
+    "description": "Гунканы со свежим лососем под запечённой шапочкой из трёх видов сыра, украшается соусом \"Терияки\" и воздушным рисом. ",
+    "cena": "₽ 459",
+    "calory": "217 ккал",
+    "massa": "105 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll19.png"
+  },
+  {
+    "id": 20,
+    "category_id": 4,
+    "name": "Спайс Кани",
+    "description": "С мясом краба, снежным крабом и соусом спайс.",
+    "cena": "₽ 159",
+    "calory": "117 ккал",
+    "massa": "45 г",
+    "sostav": "солнце, воздух и вода",
+    "url_image": "https://kol.hhos.ru/test/susi/menu_bludo/bludo_roll20.png"
+  }
+]

@@ -2,12 +2,11 @@ package ama.test.block1
 
 import ama.test.block1.UI.FragmentAkcii
 import ama.test.block1.UI.FragmentMain
-import ama.test.block1.UI.FragmentMenu
+import ama.test.block1.UI.FragmentMenuCategory
 import ama.test.block1.UI.FragmentOrders
 import ama.test.block1.UI.FragmentProfileMain
 import ama.test.block1.databinding.ActivityMainBinding
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -64,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
                     R.id.navigation_menu -> {
                         showBottomNav()
-                        FragmentMenu.newInstance()
+                        FragmentMenuCategory.newInstance()
                     }
 
                     R.id.navigation_akcii -> {
