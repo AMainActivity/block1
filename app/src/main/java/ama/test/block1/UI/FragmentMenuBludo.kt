@@ -55,7 +55,7 @@ class FragmentMenuBludo : Fragment() {
 
     private fun setAdapterClick() {
         adapter.onMenuItemClickListener = {
-
+            launchFragmentItemBludo(it)
         }
     }
 
@@ -98,13 +98,27 @@ class FragmentMenuBludo : Fragment() {
             stateManager.addCardToList(dataMenuCategory.id, b)
             ll.addView(b)
             b.setOnClickListener {
+                categoryId = dataMenuCategory.id
                 stateManager.notifyStateChanged(it.id)
                 adapter.submitList(dataList.filter { dataModel -> dataModel.categoryId == dataMenuCategory.id }
                     .toList())
             }
         }
         stateManager.checkButtonById(categoryId)
+    }
 
+    private fun launchFragmentItemBludo(data: Pair<Int, DataMenuBludo>) {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(
+                R.id.nav_host_fragment_content_main,
+                FragmentItemBludo.newInstance(
+                    dataCategoryList.first { it.id == categoryId }.name,
+                    data.first,
+                    data.second
+                )
+            )
+            .addToBackStack(FragmentItemBludo.NAME)
+            .commit()
     }
 
     override fun onDestroyView() {
