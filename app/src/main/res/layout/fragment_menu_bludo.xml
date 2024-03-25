@@ -42,7 +42,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="@dimen/heigt_width_52"
         android:orientation="vertical">
 
         <HorizontalScrollView
@@ -56,8 +56,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:paddingStart="29dp"
-                android:paddingEnd="11dp">
+                android:paddingStart="@dimen/margin_29"
+                android:paddingEnd="@dimen/margin_11">
 
 
             </LinearLayout>
@@ -68,7 +68,7 @@
             android:id="@+id/frhmnt_menu_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin_10"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     </LinearLayout>

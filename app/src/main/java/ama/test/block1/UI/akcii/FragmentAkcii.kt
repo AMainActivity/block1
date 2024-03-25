@@ -1,10 +1,10 @@
-package ama.test.block1.UI
+package ama.test.block1.UI.akcii
 
-import ama.test.block1.DataAkcii
 import ama.test.block1.MainActivity
 import ama.test.block1.MyApp
 import ama.test.block1.R
 import ama.test.block1.databinding.FragmentAkciiBinding
+import ama.test.block1.entyty.DataAkcii
 import android.content.Context
 import android.graphics.Rect
 import android.os.Bundle
@@ -64,11 +64,15 @@ class FragmentAkcii : Fragment() {
             viewLifecycleOwner,
             onBackPressedCallback
         )
-        val viewPager = binding.pager
 
+        setupPager()
+    }
+
+    private fun setupPager() {
         val fragments = dataList.map {
             FragmentItemAkcia.newInstance(it)
         }
+        val viewPager = binding.pager
         val adapter = AkciiAdapter(fragments, childFragmentManager, viewLifecycleOwner.lifecycle)
         viewPager.adapter = adapter
         val dotsContainer = binding.dotContainer
@@ -86,8 +90,6 @@ class FragmentAkcii : Fragment() {
         val pageTranslationX = nextItemVisiblePx + currentItemHorizontalMarginPx
         val pageTransformer = ViewPager2.PageTransformer { page: View, position: Float ->
             page.translationX = -pageTranslationX * position
-            // If you want a fading effect uncomment the next line:
-            // page.alpha = 0.25f + (1 - abs(position))
         }
         viewPager.setPageTransformer(pageTransformer)
         val itemDecoration = HorizontalMarginItemDecoration(

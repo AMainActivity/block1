@@ -1,6 +1,7 @@
-package ama.test.block1.UI
+package ama.test.block1.UI.menu.category
 
 import ama.test.block1.databinding.MenuCategoryItemBinding
+import ama.test.block1.entyty.DataMenuCategory
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter

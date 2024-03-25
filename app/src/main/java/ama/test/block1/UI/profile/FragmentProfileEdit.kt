@@ -1,4 +1,4 @@
-package ama.test.block1.UI
+package ama.test.block1.UI.profile
 
 import ama.test.block1.R
 import ama.test.block1.databinding.FragmentProfileEditBinding

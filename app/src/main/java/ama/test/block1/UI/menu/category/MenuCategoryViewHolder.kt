@@ -1,4 +1,4 @@
-package ama.test.block1.UI
+package ama.test.block1.UI.menu.category
 
 import ama.test.block1.databinding.MenuCategoryItemBinding
 import androidx.recyclerview.widget.RecyclerView

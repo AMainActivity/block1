@@ -6,7 +6,7 @@
     <item
         android:id="@+id/action_search_org"
         android:icon="@drawable/menu_search_24"
-        android:title="Поиск"
+        android:title="@string/category_menu"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_busket"

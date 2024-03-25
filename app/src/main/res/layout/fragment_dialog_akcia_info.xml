@@ -22,7 +22,7 @@
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/akcia_iv"
                     android:layout_width="match_parent"
-                    android:layout_height="296dp"
+                    android:layout_height="@dimen/margin_296"
                     android:scaleType="centerCrop"
                     android:src="@drawable/rv_item_delivery" />
 
@@ -31,7 +31,7 @@
                     android:layout_width="@dimen/heigt_width_38"
                     android:layout_height="@dimen/heigt_width_38"
                     android:layout_marginStart="@dimen/margin_8"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="@dimen/margin_16"
                     android:background="@color/transparent"
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
@@ -45,13 +45,12 @@
                 android:layout_marginStart="@dimen/heigt_width_48"
                 android:layout_marginTop="@dimen/margin_16"
                 android:layout_marginEnd="@dimen/heigt_width_48"
-                android:text="16 июля"
                 android:textColor="@color/orange"
-                android:textSize="16sp" />
+                android:textSize="@dimen/text_size_16" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="@dimen/margin_2"
                 android:layout_marginStart="@dimen/heigt_width_48"
                 android:layout_marginTop="@dimen/margin_16"
                 android:layout_marginEnd="@dimen/heigt_width_48"
@@ -64,10 +63,9 @@
                 android:layout_marginStart="@dimen/heigt_width_48"
                 android:layout_marginTop="@dimen/margin_16"
                 android:layout_marginEnd="@dimen/heigt_width_48"
-                android:text="заголовок акции или его краткое описание"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="@dimen/text_size_16" />
 
             <TextView
                 android:id="@+id/akcia_tv_info"
@@ -76,9 +74,8 @@
                 android:layout_marginStart="@dimen/heigt_width_48"
                 android:layout_marginTop="@dimen/margin_16"
                 android:layout_marginEnd="@dimen/heigt_width_48"
-                android:text="заголовок акции или его краткое описание"
                 android:textColor="@color/gray"
-                android:textSize="16sp" />
+                android:textSize="@dimen/text_size_16" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

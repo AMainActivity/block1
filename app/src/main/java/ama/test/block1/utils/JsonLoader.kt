@@ -1,13 +1,9 @@
-package ama.test.block1
+package ama.test.block1.utils
 
 import android.app.Application
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.IOException
-import java.util.Arrays
-
-
-
 
 class JsonLoader(
     private val application: Application
@@ -31,7 +27,11 @@ class JsonLoader(
             return gson.fromJson(jsonFileString, listDTOType)
 
         } catch (e: Exception) {
-            throw Exception("не удалось загрузить")
+            throw Exception(ERROR_LOADING)
         }
+    }
+
+    companion object {
+        const val ERROR_LOADING = "Не удалось загрузить"
     }
 }

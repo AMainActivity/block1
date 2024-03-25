@@ -1,15 +1,14 @@
-package ama.test.block1.UI
+package ama.test.block1.UI.profile
 
-import ama.test.block1.ProfilePreferences
-import ama.test.block1.ProfilePreferences.Companion.userPhoto
 import ama.test.block1.ProfileViewModel
 import ama.test.block1.R
 import ama.test.block1.databinding.FrgmntDialogProfilePhotoBinding
+import ama.test.block1.utils.ProfilePreferences
+import ama.test.block1.utils.ProfilePreferences.Companion.userPhoto
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -53,19 +52,13 @@ class FragmentProfilePhoto : BottomSheetDialogFragment() {
         }
         launchImageGalery = registerForActivityResult(contractImageGallery)
         {
-            Log.e("selectedImageUri", it.toString())
-            val selectedImageUri = it ?: throw Exception("no photo")
-            /* requireActivity().grantUriPermission(
-                 requireActivity().packageName,
-                 selectedImageUri,
-                 Intent.FLAG_GRANT_READ_URI_PERMISSION
-             );*/
-             val flag = Intent.FLAG_GRANT_READ_URI_PERMISSION
-             requireContext().contentResolver.takePersistableUriPermission(selectedImageUri, flag)
+            val selectedImageUri = it ?: throw Exception(NO_PHOTO)
+
+            val flag = Intent.FLAG_GRANT_READ_URI_PERMISSION
+            requireContext().contentResolver.takePersistableUriPermission(selectedImageUri, flag)
             viewModel.changeUriFromCamera(selectedImageUri)
             ProfilePreferences.profilePreference(requireContext()).userPhoto =
                 selectedImageUri.toString()
-            Log.e("selectedImageUri2", it.toString())
 
             dialog?.dismiss()
         }
@@ -84,7 +77,7 @@ class FragmentProfilePhoto : BottomSheetDialogFragment() {
             dialog?.dismiss()
         }
         binding.profilePhotoFromGalery.setOnClickListener {
-            launchImageGalery.launch("image/*")
+            launchImageGalery.launch(IMAGE_TYPE)
         }
     }
 
@@ -95,6 +88,8 @@ class FragmentProfilePhoto : BottomSheetDialogFragment() {
 
     companion object {
         const val NAME = "FragmentProfilePhoto"
+        const val NO_PHOTO = "no photo"
+        const val IMAGE_TYPE = "image/*"
         fun newInstance(): FragmentProfilePhoto {
             return FragmentProfilePhoto()
         }

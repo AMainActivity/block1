@@ -1,8 +1,10 @@
-package ama.test.block1.UI
+package ama.test.block1.UI.menu.bludo
 
 import ama.test.block1.MyApp
 import ama.test.block1.R
 import ama.test.block1.databinding.FragmentMenuBludoBinding
+import ama.test.block1.entyty.DataMenuBludo
+import ama.test.block1.entyty.DataMenuCategory
 import android.content.Context
 import android.os.Bundle
 import android.util.TypedValue
@@ -24,6 +26,10 @@ class FragmentMenuBludo : Fragment() {
     private var _binding: FragmentMenuBludoBinding? = null
     private lateinit var adapter: FragmentMenuBludoAdapter
     private var categoryId: Int = 0
+    private val params = LinearLayout.LayoutParams(
+        LinearLayout.LayoutParams.WRAP_CONTENT,
+        LinearLayout.LayoutParams.WRAP_CONTENT
+    )
     private val dataList: List<DataMenuBludo> by lazy {
         (requireActivity().application as MyApp).dataMenuBludo
     }
@@ -79,21 +85,22 @@ class FragmentMenuBludo : Fragment() {
         setAdapterClick()
 
 
-        val ll = binding.llFilterCategory
         val stateManager = StateManager(requireContext())
+        addFilterButtons(stateManager)
 
-        val params = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.WRAP_CONTENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT
-        )
-        params.setMargins(10, 10, 18 * stateManager.margDp(), 10)
+
+    }
+
+    private fun addFilterButtons(stateManager: StateManager) {
+        val ll = binding.llFilterCategory
+        params.setMargins(MARGIN_10, MARGIN_10, MARGIN_18 * stateManager.margDp(), MARGIN_10)
         dataCategoryList.forEach { dataMenuCategory ->
             val b = MaterialButton(requireContext())
             b.id = generateViewId()
             b.layoutParams = params
-            b.cornerRadius = 70 * stateManager.margDp()
+            b.cornerRadius = CORNER_RADIUS * stateManager.margDp()
             b.isAllCaps = false
-            b.letterSpacing = 0f
+            b.letterSpacing = FLOAT_0
             b.text = dataMenuCategory.name
             stateManager.addCardToList(dataMenuCategory.id, b)
             ll.addView(b)
@@ -138,7 +145,7 @@ class FragmentMenuBludo : Fragment() {
         private val ctx = context
         fun margDp() = TypedValue.applyDimension(
             TypedValue.COMPLEX_UNIT_DIP,
-            1f,
+            FLOAT_1,
             ctx.resources.displayMetrics
         ).toInt()
 
@@ -163,7 +170,7 @@ class FragmentMenuBludo : Fragment() {
                             ctx,
                             R.color.transparent
                         )
-                    b.strokeWidth = 0
+                    b.strokeWidth = ZERO_INT
                 } else {
                     b.setStrokeColorResource(R.color.orange)
                     b.backgroundTintList =
@@ -171,7 +178,7 @@ class FragmentMenuBludo : Fragment() {
                             ctx,
                             R.color.orange_transparently
                         )
-                    b.strokeWidth = 2 * margDp()
+                    b.strokeWidth = STROKE_WIDTH * margDp()
                 }
             }
         }
@@ -179,6 +186,13 @@ class FragmentMenuBludo : Fragment() {
 
     companion object {
         private const val ARG_DATA_CATEGORY_ID = "data_categoty_id"
+        private const val ZERO_INT = 0
+        private const val FLOAT_1 = 1f
+        private const val FLOAT_0 = 0f
+        private const val STROKE_WIDTH = 2
+        private const val CORNER_RADIUS = 70
+        private const val MARGIN_10 = 10
+        private const val MARGIN_18 = 18
         const val PARSE_ERROR = "Required param categotyId is absent"
         const val NAME = "FragmentMenuBludo"
         fun newInstance(categoryId: Int): FragmentMenuBludo {

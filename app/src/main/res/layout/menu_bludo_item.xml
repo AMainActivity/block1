@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/item_bg"
         android:layout_width="match_parent"
-        android:layout_height="216dp"
+        android:layout_height="@dimen/margin_216"
         android:fitsSystemWindows="true"
         android:scaleType="centerCrop"
         android:src="@drawable/rv_item_menu"
@@ -27,16 +27,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16"
-            android:layout_marginEnd="168dp"
-            android:layout_marginBottom="1dp"
-            android:text="название блюда"
+            android:layout_marginEnd="@dimen/margin_168"
+            android:layout_marginBottom="@dimen/margin_1"
             android:textColor="@drawable/profile_color_selector"
             android:textSize="@dimen/text_size_24" />
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="14dp">
+            android:layout_marginBottom="@dimen/margin_14">
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -45,47 +44,46 @@
 
                 <LinearLayout
                     android:id="@+id/ll_choose_kolvo"
-                    android:layout_width="120dp"
-                    android:layout_height="46dp"
+                    android:layout_width="@dimen/margin_120"
+                    android:layout_height="@dimen/margin_46"
                     android:layout_gravity="end|center"
-                    android:layout_marginEnd="16dp"
-                    android:gravity="center"
-                    android:clickable="true"
+                    android:layout_marginEnd="@dimen/margin_16"
                     android:background="@drawable/backgroubd_with_border"
-                    android:orientation="horizontal"
-                    android:focusable="true">
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
                     <LinearLayout
                         android:id="@+id/but_minus"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="@dimen/margin_24"
+                        android:layout_height="@dimen/margin_24"
                         android:layout_marginStart="@dimen/margin_16"
                         android:background="@drawable/bludo_minus_24"
+                        android:backgroundTint="@drawable/profile_color_selector"
                         android:clickable="true"
                         android:focusable="true"
-                        android:backgroundTint="@drawable/profile_color_selector"
                         android:gravity="center_vertical"
                         android:orientation="horizontal" />
 
                     <TextView
                         android:id="@+id/tv_kolvo"
-                        android:layout_width="0dp"
+                        android:layout_width="@dimen/margin_0"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="@color/white"
-                        android:textSize="18sp"
-                        android:text="1"/>
+                        android:textSize="@dimen/text_size_18" />
 
                     <LinearLayout
                         android:id="@+id/but_plus"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:background="@drawable/bludo_plus_24"
+                        android:layout_width="@dimen/heigt_width_24"
+                        android:layout_height="@dimen/heigt_width_24"
                         android:layout_marginEnd="@dimen/margin_16"
+                        android:background="@drawable/bludo_plus_24"
+                        android:backgroundTint="@drawable/profile_color_selector"
                         android:clickable="true"
                         android:focusable="true"
-                        android:backgroundTint="@drawable/profile_color_selector"
                         android:gravity="center_vertical"
                         android:orientation="horizontal" />
 
@@ -94,26 +92,24 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/mb_cena"
                     style="@style/StyledMaterialButton"
-                    android:layout_width="120dp"
-                    android:layout_height="56dp"
-                    android:minHeight="48dp"
+                    android:layout_width="@dimen/margin_120"
+                    android:layout_height="@dimen/margin_56"
                     android:layout_gravity="end"
                     android:layout_marginEnd="@dimen/margin_16"
-                    android:text="10000" />
+                    android:minHeight="@dimen/heigt_width_48" />
 
             </FrameLayout>
 
             <TextView
                 android:id="@+id/tv_description"
-                android:layout_width="230dp"
+                android:layout_width="@dimen/margin_230"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_16"
-                android:layout_marginEnd="128dp"
+                android:layout_marginEnd="@dimen/margin_128"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="название блюданазвание блюданазвание блюданазвание блюданазвание блюданазвание блюдаблюданазвание блюдаблюданазвание блюдаблюданазвание блюдаблюданазвание блюда"
                 android:textColor="@color/gray"
-                android:textSize="18sp" />
+                android:textSize="@dimen/text_size_18" />
 
         </FrameLayout>
     </LinearLayout>

@@ -1,4 +1,4 @@
-package ama.test.block1.UI
+package ama.test.block1.entyty
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

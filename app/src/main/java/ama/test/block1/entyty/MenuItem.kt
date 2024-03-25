@@ -1,4 +1,4 @@
-package ama.test.block1
+package ama.test.block1.entyty
 
 data class MenuItem(
     val name: String,

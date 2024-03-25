@@ -35,9 +35,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_16"
-            android:text="16 июля"
             android:textColor="@color/orange"
-            android:textSize="16sp" />
+            android:textSize="@dimen/text_size_16" />
 
         <View
             android:layout_width="match_parent"
@@ -51,9 +50,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_16"
-            android:text="заголовок акции или его краткое описание"
             android:textAllCaps="true"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="@dimen/text_size_16" />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

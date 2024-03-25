@@ -1,10 +1,10 @@
 package ama.test.block1
 
-import ama.test.block1.UI.FragmentAkcii
+import ama.test.block1.UI.akcii.FragmentAkcii
 import ama.test.block1.UI.FragmentMain
-import ama.test.block1.UI.FragmentMenuCategory
+import ama.test.block1.UI.menu.category.FragmentMenuCategory
 import ama.test.block1.UI.FragmentOrders
-import ama.test.block1.UI.FragmentProfileMain
+import ama.test.block1.UI.profile.FragmentProfileMain
 import ama.test.block1.databinding.ActivityMainBinding
 import android.os.Bundle
 import android.view.View
@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
-
 
     private fun showBottomNav() {
         binding.contentMain.bottomNavigationView.visibility = View.VISIBLE

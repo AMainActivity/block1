@@ -1,6 +1,7 @@
-package ama.test.block1.UI
+package ama.test.block1.UI.menu.bludo
 
 import ama.test.block1.databinding.MenuBludoItemBinding
+import ama.test.block1.entyty.DataMenuBludo
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,24 +29,24 @@ class FragmentMenuBludoAdapter :
             .into(binding.itemBg)
         binding.tvName.text = itemMenuBludo.name
         binding.mbCena.visibility = View.VISIBLE
-        binding.tvKolvo.text = "1"
+        binding.tvKolvo.text = FIRST_ITEM_STRING
         binding.tvDescription.text = itemMenuBludo.description
         binding.butPlus.setOnClickListener {
             var kolvo = binding.tvKolvo.text.toString().toInt()
-            if (kolvo < 15) kolvo++
+            if (kolvo < LIMIT_ITEMS) kolvo++
             binding.tvKolvo.text = kolvo.toString()
         }
         binding.butMinus.setOnClickListener {
             var kolvo = binding.tvKolvo.text.toString().toInt()
-            if (kolvo >= 1) kolvo--
+            if (kolvo >= FIRST_ITEM) kolvo--
             binding.tvKolvo.text = kolvo.toString()
-            if (kolvo == 0)
+            if (kolvo == ZERO_ITEM)
                 binding.mbCena.visibility = View.VISIBLE
         }
 
         binding.mbCena.text = itemMenuBludo.cena
         binding.mbCena.setOnClickListener {
-            binding.tvKolvo.text = "1"
+            binding.tvKolvo.text = FIRST_ITEM_STRING
             binding.mbCena.visibility = View.INVISIBLE
         }
         binding.root.setOnClickListener {
@@ -53,5 +54,12 @@ class FragmentMenuBludoAdapter :
                 binding.tvKolvo.text.toString().toInt() to itemMenuBludo
             )
         }
+    }
+
+    companion object {
+        private const val LIMIT_ITEMS = 15
+        private const val ZERO_ITEM = 0
+        private const val FIRST_ITEM = 1
+        private const val FIRST_ITEM_STRING = "1"
     }
 }

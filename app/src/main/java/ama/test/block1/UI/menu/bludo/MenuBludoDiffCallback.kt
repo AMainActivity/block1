@@ -1,5 +1,6 @@
-package ama.test.block1.UI
+package ama.test.block1.UI.menu.bludo
 
+import ama.test.block1.entyty.DataMenuBludo
 import androidx.recyclerview.widget.DiffUtil
 
 object MenuBludoDiffCallback : DiffUtil.ItemCallback<DataMenuBludo>() {

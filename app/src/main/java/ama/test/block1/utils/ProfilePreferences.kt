@@ -1,4 +1,4 @@
-package ama.test.block1
+package ama.test.block1.utils
 
 import android.content.Context
 import android.content.SharedPreferences

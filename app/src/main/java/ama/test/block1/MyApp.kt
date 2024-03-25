@@ -1,7 +1,9 @@
 package ama.test.block1
 
-import ama.test.block1.UI.DataMenuBludo
-import ama.test.block1.UI.DataMenuCategory
+import ama.test.block1.entyty.DataMenuBludo
+import ama.test.block1.entyty.DataMenuCategory
+import ama.test.block1.entyty.DataAkcii
+import ama.test.block1.utils.JsonLoader
 import android.app.Application
 
 

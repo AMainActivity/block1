@@ -1,9 +1,9 @@
-package ama.test.block1.UI
+package ama.test.block1.UI.akcii
 
-import ama.test.block1.DataAkcii
 import ama.test.block1.MainActivity
 import ama.test.block1.R
 import ama.test.block1.databinding.FragmentItemAkciaBinding
+import ama.test.block1.entyty.DataAkcii
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,17 +11,12 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.squareup.picasso.Picasso
-import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDate
-import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.format
-import kotlinx.datetime.format.FormatStringsInDatetimeFormats
 import kotlinx.datetime.format.MonthNames
-import kotlinx.datetime.format.byUnicodePattern
 import kotlinx.datetime.format.char
-import kotlinx.datetime.number
 import kotlinx.datetime.toLocalDateTime
 
 
@@ -60,7 +55,7 @@ class FragmentItemAkcia : Fragment() {
         Picasso.get().load(dataAkcia?.urlImage)
             .into(binding.akciaIv)
         binding.akciaCv.setOnClickListener {
-            FragmentDialogAkciaInfo.newInstance(dataAkcia ?: throw Exception("не на что смотреть"))
+            FragmentDialogAkciaInfo.newInstance(dataAkcia ?: throw Exception(ERROR_NO_DATA))
                 .show(
                     childFragmentManager, FragmentDialogAkciaInfo.NAME
                 )
@@ -82,20 +77,20 @@ class FragmentItemAkcia : Fragment() {
         }
     }
 
-    private val RUSSIAN_MONTHS: MonthNames = MonthNames(
+    private val rusMonthsName: MonthNames = MonthNames(
         listOf(
             "января", "февраля", "марта", "апреля", "мая", "июня",
-            "июля", "сентября", "октября", "ноября", "Nov", "декабря"
+            "июля", "августа", "сентября", "октября", "ноября", "декабря"
         )
     )
 
     private fun getFormattedDate(dateTime: Long?): String {
-        val instant = Instant.fromEpochMilliseconds(dateTime ?: 0)
+        val instant = Instant.fromEpochMilliseconds(dateTime ?: ZERO_LONG)
         return instant.toLocalDateTime(TimeZone.currentSystemDefault()).date.format(LocalDate.Format {
             dayOfMonth()
-            char(' ')
-            monthName(RUSSIAN_MONTHS)
-            chars(" ")
+            char(SPACE_CHAR)
+            monthName(rusMonthsName)
+            chars(SPACE_STRING)
             year()
         })
     }
@@ -107,6 +102,10 @@ class FragmentItemAkcia : Fragment() {
 
     companion object {
         private const val ARG_DATA_ITEM_AKCIA = "data_item_akcia"
+        private const val ZERO_LONG = 0L
+        private const val SPACE_STRING = " "
+        private const val SPACE_CHAR = ' '
+        private const val ERROR_NO_DATA = "не на что смотреть"
         const val PARSE_ERROR = "Required param dataList is absent"
         const val NAME = "FragmentItemAkcia"
         fun newInstance(dataAkcia: DataAkcii): FragmentItemAkcia {

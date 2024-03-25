@@ -2,7 +2,7 @@ package ama.test.block1.UI
 
 import ama.test.block1.MainActivity
 import ama.test.block1.MainAdapter
-import ama.test.block1.MenuItem
+import ama.test.block1.entyty.MenuItem
 import ama.test.block1.R
 import ama.test.block1.databinding.FragmentMainBinding
 import android.os.Bundle

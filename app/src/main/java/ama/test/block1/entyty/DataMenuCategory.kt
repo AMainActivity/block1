@@ -1,16 +1,13 @@
-package ama.test.block1
+package ama.test.block1.entyty
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class DataAkcii(
+data class DataMenuCategory(
     val id: Int,
-    @SerializedName("date_start")
-    val dateStart: Long,
     @SerializedName("url_image")
     val urlImage: String,
-    val name: String,
-    val description: String
-): Parcelable
+    val name: String
+) : Parcelable

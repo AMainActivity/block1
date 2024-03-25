@@ -1,7 +1,8 @@
-package ama.test.block1.UI
+package ama.test.block1.UI.akcii
 
-import ama.test.block1.DataAkcii
+import ama.test.block1.R
 import ama.test.block1.databinding.FragmentDialogAkciaInfoBinding
+import ama.test.block1.entyty.DataAkcii
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -11,6 +12,13 @@ import android.view.ViewGroup
 import android.view.Window
 import androidx.fragment.app.DialogFragment
 import com.squareup.picasso.Picasso
+import kotlinx.datetime.Instant
+import kotlinx.datetime.LocalDate
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.format
+import kotlinx.datetime.format.MonthNames
+import kotlinx.datetime.format.char
+import kotlinx.datetime.toLocalDateTime
 
 
 class FragmentDialogAkciaInfo : DialogFragment() {
@@ -27,6 +35,24 @@ class FragmentDialogAkciaInfo : DialogFragment() {
         _binding = FragmentDialogAkciaInfoBinding.inflate(inflater, container, false)
         setDialogAttributes()
         return binding.root
+    }
+
+    private val rusMonthsName: MonthNames = MonthNames(
+        listOf(
+            "января", "февраля", "марта", "апреля", "мая", "июня",
+            "июля", "августа", "сентября", "октября", "ноября", "декабря"
+        )
+    )
+
+    private fun getFormattedDate(dateTime: Long?): String {
+        val instant = Instant.fromEpochMilliseconds(dateTime ?: ZERO_LONG)
+        return instant.toLocalDateTime(TimeZone.currentSystemDefault()).date.format(LocalDate.Format {
+            dayOfMonth()
+            char(SPACE_CHAR)
+            monthName(rusMonthsName)
+            chars(SPACE_STRING)
+            year()
+        })
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +80,7 @@ class FragmentDialogAkciaInfo : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.akciaTvDate.text = dataAkcia?.dateStart.toString()
+        binding.akciaTvDate.text = getFormattedDate(dataAkcia?.dateStart)
         binding.akciaTvTitle.text = dataAkcia?.name.toString()
         binding.akciaTvInfo.text = dataAkcia?.description.toString()
         Picasso.get().load(dataAkcia?.urlImage)
@@ -81,6 +107,9 @@ class FragmentDialogAkciaInfo : DialogFragment() {
     }
 
     companion object {
+        private const val ZERO_LONG = 0L
+        private const val SPACE_STRING = " "
+        private const val SPACE_CHAR = ' '
         private const val ARG_DATA_AKCIA = "data_akcia"
         const val PARSE_ERROR = "Required param dataList is absent"
         const val NAME = "FragmentDialogAkciaInfo"

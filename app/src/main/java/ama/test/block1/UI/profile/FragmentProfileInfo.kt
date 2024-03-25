@@ -1,10 +1,10 @@
-package ama.test.block1.UI
+package ama.test.block1.UI.profile
 
-import ama.test.block1.ProfilePreferences
-import ama.test.block1.ProfilePreferences.Companion.userPhoto
 import ama.test.block1.ProfileViewModel
 import ama.test.block1.R
 import ama.test.block1.databinding.FragmentProfileInfoBinding
+import ama.test.block1.utils.ProfilePreferences
+import ama.test.block1.utils.ProfilePreferences.Companion.userPhoto
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater

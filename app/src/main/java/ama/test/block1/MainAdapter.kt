@@ -1,6 +1,7 @@
 package ama.test.block1
 
 import ama.test.block1.databinding.MenuItemBinding
+import ama.test.block1.entyty.MenuItem
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

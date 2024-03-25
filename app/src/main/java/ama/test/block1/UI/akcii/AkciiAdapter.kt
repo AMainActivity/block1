@@ -1,4 +1,4 @@
-package ama.test.block1.UI
+package ama.test.block1.UI.akcii
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

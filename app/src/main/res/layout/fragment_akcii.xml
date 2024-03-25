@@ -45,14 +45,14 @@
         android:background="@mipmap/background"
         android:fitsSystemWindows="true"
         android:gravity="center"
-        android:layout_marginTop="52dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginTop="@dimen/heigt_width_52"
+        android:layout_marginBottom="@dimen/margin_17"
         android:orientation="vertical">
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/pager"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/margin_0"
             android:layout_weight="1" />
 
         <LinearLayout

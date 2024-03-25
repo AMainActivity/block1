@@ -1,10 +1,10 @@
-package ama.test.block1.UI
+package ama.test.block1.UI.menu.bludo
 
 import ama.test.block1.MyApp
 import ama.test.block1.R
 import ama.test.block1.databinding.FragmentItemBludoBinding
+import ama.test.block1.entyty.DataMenuBludo
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -20,14 +20,11 @@ class FragmentItemBludo : Fragment() {
 
     private var _binding: FragmentItemBludoBinding? = null
     private var dataMenuBludo: DataMenuBludo? = null
-    private var kolvo: Int = 1
-    private var categoryName: String = ""
+    private var kolvo: Int = INT_1
+    private var categoryName: String = EMPTY_STRING
     private lateinit var adapter: FragmentMenuBludoAdapter
     private val dataList: List<DataMenuBludo> by lazy {
         (requireActivity().application as MyApp).dataMenuBludo
-    }
-    private val dataCategoryList: List<DataMenuCategory> by lazy {
-        (requireActivity().application as MyApp).dataMenuCategory
     }
     private val binding
         get() = _binding ?: throw RuntimeException("FragmentItemBludoBinding == null")
@@ -39,7 +36,7 @@ class FragmentItemBludo : Fragment() {
         binding.frhmntMenuRv.itemAnimator = null
         adapter.submitList(
             dataList.filter { it.categoryId == dataMenuBludo?.categoryId }.toList().shuffled()
-                .take(2).toList()
+                .take(INT_2).toList()
         )
     }
 
@@ -105,13 +102,13 @@ class FragmentItemBludo : Fragment() {
         requireActivity().supportFragmentManager.beginTransaction()
             .replace(
                 R.id.nav_host_fragment_content_main,
-                FragmentItemBludo.newInstance(
+                newInstance(
                     categoryName,
                     data.first,
                     data.second
                 )
             )
-            .addToBackStack(FragmentItemBludo.NAME)
+            .addToBackStack(NAME)
             .commit()
     }
 
@@ -153,7 +150,6 @@ class FragmentItemBludo : Fragment() {
         return when (item.itemId) {
             android.R.id.home -> {
                 requireActivity().supportFragmentManager.popBackStack()
-                Log.e("home", "home")
                 true
             }
 
@@ -162,6 +158,9 @@ class FragmentItemBludo : Fragment() {
     }
 
     companion object {
+        private const val EMPTY_STRING = ""
+        private const val INT_1 = 1
+        private const val INT_2 = 2
         private const val ARG_DATA_ITEM_BLUDO = "data_item_bludo"
         private const val ARG_DATA_ITEM_BLUDO_KOLVO = "data_item_bludo_kolvo"
         private const val ARG_DATA_ITEM_BLUDO_CATEGORY = "data_item_bludo_category"

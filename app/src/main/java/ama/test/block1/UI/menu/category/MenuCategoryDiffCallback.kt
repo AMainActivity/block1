@@ -1,5 +1,6 @@
-package ama.test.block1.UI
+package ama.test.block1.UI.menu.category
 
+import ama.test.block1.entyty.DataMenuCategory
 import androidx.recyclerview.widget.DiffUtil
 
 object MenuCategoryDiffCallback : DiffUtil.ItemCallback<DataMenuCategory>() {
