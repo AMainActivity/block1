@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="MainTextViewStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:layout_marginStart">@dimen/margin_1</item>
     </style>
+
+
+    <style name="StyledMaterialButton">
+        <item name="cornerRadius">70dp</item>
+        <item name="strokeColor">@color/orange</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+
     <style name="SecondTextViewStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/gray</item>
         <item name="android:layout_marginStart">@dimen/margin_1</item>
+    </style>
+
+    <style name="MyTransparentBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="ShapeAppearance.MyApp.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">55dp</item>
     </style>
 
 </resources>

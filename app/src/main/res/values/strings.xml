@@ -28,4 +28,44 @@
     <string name="activity_profile_menu_exit">Выйти</string>
     <string name="activity_profile_menu_list_of_addresses">Список адресов</string>
     <string name="activity_profile_menu_history_of_orders">История заказов</string>
+    <string name="frgmnt_main_menu">Меню</string>
+    <string name="frgmnt_main">Главная</string>
+    <string name="frgmnt_main_akcii">Акции</string>
+    <string name="frgmnt_main_orders">Заказы</string>
+    <string name="frgmnt_main_delivery">Доставка</string>
+    <string name="dialog_photo_select">Выбрать фото</string>
+    <string name="dialog_photo_take">Сделать снимок</string>
+    <string name="dialog_photo_delete">Удалить</string>
+    <string name="dialog_camera_photo">Фото</string>
+    <string name="dialog_camera_rotate">Сменить камеру</string>
+    <string name="bludo_item_limit_format">%1$s/15</string>
+    <string-array name="russian_month_name">
+        <item>@string/ru_jan</item>
+        <item>@string/ru_feb</item>
+        <item>@string/ru_mar</item>
+        <item>@string/ru_apr</item>
+        <item>@string/ru_may</item>
+        <item>@string/ru_jun</item>
+        <item>@string/ru_jul</item>
+        <item>@string/ru_aug</item>
+        <item>@string/ru_sep</item>
+        <item>@string/ru_okt</item>
+        <item>@string/ru_nob</item>
+        <item>@string/ru_dec</item>
+    </string-array>
+
+    <string name="ru_jan">января</string>
+    <string name="ru_feb">февраля</string>
+    <string name="ru_mar">марта</string>
+    <string name="ru_apr">апреля</string>
+    <string name="ru_may">мая</string>
+    <string name="ru_jun">июня</string>
+    <string name="ru_jul">июля</string>
+    <string name="ru_aug">августа</string>
+    <string name="ru_sep">сентября</string>
+    <string name="ru_okt">октября</string>
+    <string name="ru_nob">ноября</string>
+    <string name="ru_dec">декабря</string>
+    <string name="category_menu">Поиск</string>
+    <string name="bludo_recomendation_text">Рекомендуем</string>
 </resources>

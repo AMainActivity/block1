@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_gray"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/akcia_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_296"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/rv_item_delivery" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/image_button_close"
+                    android:layout_width="@dimen/heigt_width_38"
+                    android:layout_height="@dimen/heigt_width_38"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:background="@color/transparent"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/akcia_tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/heigt_width_48"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/heigt_width_48"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/text_size_16" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_2"
+                android:layout_marginStart="@dimen/heigt_width_48"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/heigt_width_48"
+                android:background="@color/gray" />
+
+            <TextView
+                android:id="@+id/akcia_tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/heigt_width_48"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/heigt_width_48"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:id="@+id/akcia_tv_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/heigt_width_48"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/heigt_width_48"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_16" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

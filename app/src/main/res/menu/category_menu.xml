@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ProfileMainActivity">
+
+    <item
+        android:id="@+id/action_search_org"
+        android:icon="@drawable/menu_search_24"
+        android:title="@string/category_menu"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_busket"
+        android:icon="@drawable/menu_basket_24"
+        android:title="@string/menu_cart"
+        app:showAsAction="always" />
+</menu>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+            app:toolbarId="@+id/toolbar">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_bludo"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_216"
+                    android:layout_marginTop="@dimen/heigt_width_52"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/rv_item_delivery"
+                    app:layout_collapseMode="parallax" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                app:layout_collapseMode="pin">
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/frgmnt_main_akcii"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_20" />
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:navigationIcon="@drawable/menu_left_24">
+
+
+                </com.google.android.material.appbar.MaterialToolbar>
+
+            </FrameLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark_gray"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/dark_gray"
+                android:fitsSystemWindows="true"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv_bludo_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/heigt_width_48"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:layout_marginEnd="@dimen/heigt_width_48"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_18" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_bludo_calory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/heigt_width_48"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_size_16" />
+
+                    <TextView
+                        android:id="@+id/tv_bludo_massa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/margin_12"
+                        android:layout_marginEnd="@dimen/heigt_width_48"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_size_16" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_bludo_sostav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/heigt_width_48"
+                    android:layout_marginEnd="@dimen/heigt_width_48"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/text_size_16" />
+
+                <TextView
+                    android:id="@+id/tv_bludo_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/heigt_width_48"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:layout_marginEnd="@dimen/heigt_width_48"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_16" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:layout_marginBottom="@dimen/margin_22"
+                    android:fitsSystemWindows="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_bludo_cena"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_marginStart="@dimen/heigt_width_48"
+                        android:layout_marginEnd="@dimen/heigt_width_48"
+                        android:layout_weight="1"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_20" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_choose_kolvo"
+                        android:layout_width="@dimen/margin_120"
+                        android:layout_height="@dimen/margin_46"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="@dimen/heigt_width_48"
+                        android:layout_weight="1"
+                        android:background="@drawable/backgroubd_with_border"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/but_minus"
+                            android:layout_width="@dimen/margin_24"
+                            android:layout_height="@dimen/margin_24"
+                            android:layout_marginStart="@dimen/margin_16"
+                            android:background="@drawable/bludo_minus_24"
+                            android:backgroundTint="@drawable/profile_color_selector"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal" />
+
+                        <TextView
+                            android:id="@+id/tv_kolvo"
+                            android:layout_width="@dimen/margin_0"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_18" />
+
+                        <LinearLayout
+                            android:id="@+id/but_plus"
+                            android:layout_width="@dimen/margin_24"
+                            android:layout_height="@dimen/margin_24"
+                            android:layout_marginEnd="@dimen/margin_16"
+                            android:background="@drawable/bludo_plus_24"
+                            android:backgroundTint="@drawable/profile_color_selector"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_bludo_limit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:gravity="center"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_24"
+                android:gravity="center"
+                android:text="@string/bludo_recomendation_text"
+                android:textAllCaps="true"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/text_size_18" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/frhmnt_menu_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_16"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -4,6 +4,7 @@
     <color name="dark_gray">#1f2023</color>
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#f29200</color>
+    <color name="orange_transparently">#99C47330</color>
     <color name="transparent">@android:color/transparent</color>
     <color name="gray">#FFaaaaaa</color>
 </resources>
